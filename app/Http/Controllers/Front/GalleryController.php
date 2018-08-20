@@ -21,7 +21,7 @@ class GalleryController extends Controller
      public function galleryShow(Request $request)
     {
 
-        $galleries = Gallery::where('cid',$request->id)->orderBy('id','desc')->paginate(12);
+        $galleries = Gallery::where('cid',$request->id)->where('center_id',$request->center_id)->orderBy('id','desc')->paginate(12);
       
 
         $data= view('front.galleryTable',compact('galleries'))->render();

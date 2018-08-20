@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Center;
 use App\Gallery;
 use App\GalleryCategory;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,8 @@ class GalleryController extends Controller
     {
         $gallaries = Gallery::orderBy('id','desc')->paginate(20);
         $category = array_pluck(GalleryCategory::get(['id','name'])->toArray(),'name', 'id');
-        return view('admin.gallery.list', compact('gallaries','category'));
+        $center = array_pluck(Center::get(['id','name'])->toArray(),'name', 'id');
+        return view('admin.gallery.list', compact('gallaries','category','center'));
     }
 
     /**
@@ -43,8 +45,11 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
+
          $this->validate($request, [
         'file' => 'image|mimes:jpeg,png,jpg|max:400',
+        'cid' => 'required',
+        'center_id' => 'required',
         ]);
 
         if ($request->hasFile('file')) {
@@ -55,6 +60,7 @@ class GalleryController extends Controller
             $gallery = new Gallery();
             $gallery->image = $imageName; 
             $gallery->cid = $request->cid;           
+            $gallery->center_id = $request->center_id;           
 
             $gallery->save();
 

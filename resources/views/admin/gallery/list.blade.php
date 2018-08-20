@@ -14,6 +14,11 @@
         <input name="file" type="file" multiple />
       </div>
       <div>
+      
+         {!! Form::select('center_id',$center) !!}
+                                                     
+      </div><br>
+       <div>
       	{{ Form::select('cid', $category) }}
       </div>
     </form>

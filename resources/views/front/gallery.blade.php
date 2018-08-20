@@ -16,16 +16,27 @@
       <!-- facility Start here -->
       <section style="padding-top: 20px;">
         <div class="container">
-          <select name="" class="form-control" id="category">
-             <option value="" disabled="">Select Event</option>
-            @foreach (App\GalleryCategory::all() as $category)
+          
+          <div class="row">
+            <div class="col-lg-6">
+              <select name="center" class="form-control" id="center">
+                 <option>Select Center</option>
+                @foreach (App\Center::all() as $center)
 
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
-             @endforeach
-           
-        
-           
-          </select>
+                <option value="{{ $center->id }}">{{ $center->name }}</option>
+                 @endforeach 
+              </select>
+            </div>
+            <div class="col-lg-6">
+              <select name="category" class="form-control" id="category">
+         
+                @foreach (App\GalleryCategory::all() as $category)
+
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                 @endforeach 
+              </select>
+            </div>
+          </div>
         </div>
       </section>
    <section class="gallery " style="padding-top: 30px;">
@@ -81,7 +92,25 @@
         url: '{{ route('front.gallery.show') }}',
         type: 'get',
         
-        data: {id: $('#category').val()},
+        data: {id: $('#category').val(),center_id: $('#center').val()},
+      })
+      .done(function(response) {
+        $('.gallery').html(response);
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+      
+    });
+       $('#center').change(function(event) {
+      $.ajax({
+        url: '{{ route('front.gallery.show') }}',
+        type: 'get',
+        
+        data: {id: $('#category').val(),center_id: $('#center').val()},
       })
       .done(function(response) {
         $('.gallery').html(response);
