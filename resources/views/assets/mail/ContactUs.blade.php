@@ -29,5 +29,5 @@
  </div>
 
 Thanks,<br>
- D2M Hotel
+ Zad Global School
 @endcomponent

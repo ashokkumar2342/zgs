@@ -9,7 +9,7 @@
         <div class="swiper-wrapper">           
           @foreach ($sliders as $slider)  
            <div class="banner-item slide-one swiper-slide">
-             <div class="banner-overlay"><img src="{!! url('uploads/'.$slider->image) !!}" class="img-responsive" width="100%" alt=""></div>
+             <div class="banner-overlay"><img src="{!! url('uploads/'.$slider->image) !!}"  width="1366" height="800px" alt=""></div>
                <div class="container">
                  <div class="banner-content">
 
@@ -37,71 +37,74 @@
       </div><!-- swiper-container -->
     </section><!-- banner -->
     <!-- Banner End here -->
+    <section class="facility facility-two" style="background-color: #f9f7f7;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 thumbnail">
+              
+                 <h4 style="font-size: 26px;color: #fff;background-color: #ffc000; padding: 10px;"  >News &amp; Events</h4>
+                 <div >
+                 <marquee direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" style="height: 350px;padding: 10px;">
+                 @foreach ($news as $new)
+                    {{-- expr --}}
+                  
+                 <p class="bg-warning" style="color:red">  <img src="https://zippy.gfycat.com/DownrightSneakyBrant.gif" style="height:15px;"> {{$new->news}}  </p>   
 
+                  @endforeach 
+                
+                                 
+                 </marquee>
+                  
+                
+             </div>     
+          </div>
+          <div class="col-lg-4">
+            <div class="container" style="margin-left: 30px">
+               
+                <div class="facility-item">
+                  <div class="front-part">
+                    <span class="icon-two "><img src="images/smart.png" style="height: 65px;"></span>
+                    <h4>Smart Class Rooms</h4>
+                  </div>
+                  <div class="back-part">
+                    <span class="icon-two  "></span>
+                    <h4>Smart Class Rooms</h4>
+                    <p>Smart classes use all interactive modules like videos and presentations and these visually attractive methods of teaching becomes appealing to students . </p>
+                  </div>
+                
+              </div><!-- facility items -->
+            </div><!-- container -->
+            <div class="container" style="margin-left: 30px">
+               <div class="facility-item" >
+                 <div class="front-part">
+                    <span class="icon-two "><img src="images/mini theater.png" style="height: 65px;"></span>
+                   <h4>Mini Theater</h4>
+                 </div>
+                 <div class="back-part">
+                   <!-- <span class="icon-two flaticon-avatar"></span> -->
+                   <h4>Mini Theater</h4>
+                   <p>A theater, theatre or playhouse, is a structure where theatrical works or plays are performed or other performances such as musical concerts may be produced.</p>
+                 </div>
+               </div><!-- facility item -->
+            </div><!-- container -->
+          </div>
+          <div class="col-lg-4" style="padding-top: 5px">
+            
+             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FZAD-Global-School-337867916380217%2F&tabs=timeline&width=370&height=440&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="440px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="false"></iframe> 
+          
+        </div>
+        
+      </div>
+    </section>
 
-  	<!-- facility Start here -->
-  	<section class="facility facility-two">
-  		<div class="container">
-				<div class="facility-items">
-          <div class="facility-item">
-            <div class="front-part">
-              <span class="icon-two "><img src="images/smart.png" style="height: 65px;"></span>
-              <h4>Smart Class Rooms</h4>
-            </div>
-            <div class="back-part">
-              <span class="icon-two  "></span>
-              <h4>Smart Class Rooms</h4>
-              <p>Smart classes use all interactive modules like videos and presentations and these visually attractive methods of teaching becomes appealing to students . </p>
-            </div>
-          </div><!-- facility item -->
-          <div class="facility-item">
-            <div class="front-part">
-               <span class="icon-two "><img src="images/mini theater.png" style="height: 65px;"></span>
-              <h4>Mini Theater</h4>
-            </div>
-            <div class="back-part">
-              <!-- <span class="icon-two flaticon-avatar"></span> -->
-              <h4>Mini Theater</h4>
-              <p>A theater, theatre or playhouse, is a structure where theatrical works or plays are performed or other performances such as musical concerts may be produced.</p>
-            </div>
-          </div><!-- facility item -->
-          <div class="facility-item">
-            <div class="front-part">
-              <!-- <span class="icon-two flaticon-world"></span> -->
-              <span class="icon-two "><img src="images/yoga.png" style="height: 65px;"></span>
-              <h4>Yoga and Aerobics</h4>
-            </div>
-            <div class="back-part">
-              <!-- <span class="icon-two flaticon-world"></span> -->
-              <h4>Yoga and Aerobics</h4>
-              <p>Through a regularized routine of Yoga and Meditation, the Goenkans have evolved into a sprightly and agile breed.</p>
-            </div>
-          </div><!-- facility item -->
-          <div class="facility-item">
-            <div class="front-part">
-              <!-- <span class="icon-two flaticon-line-chart"></span> -->
-              <i class="icon-two fa fa-bus" aria-hidden="true"></i>
-              <h4>Transportation</h4>
-            </div>
-            <div class="back-part">
-              <!-- <span class="icon-two flaticon-line-chart"></span> -->
-              <!-- <i class="icon-two fa fa-bus" aria-hidden="true"></i> -->
-
-              <h4>Transportation</h4>
-              <p>The School has its own fleet of deluxe air-conditioned buses. All the buses are equipped with the latest communication facilities like wireless and mobile phones.</p>
-            </div>
-          </div><!-- facility item -->    
-        </div><!-- facility items -->
-  		</div><!-- container -->
-  	</section><!-- facility -->
-  	<!-- facility End here -->
+ 
 
 
   	<!-- About Start here -->
   	<section class="about about-two padding-120">
   		<div class="container">
   			<div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="about-content">
               <h4 style="font-size: 36px;color: #ffc000;">Welcome To ZAD Global School</h4>
               <img src="{{ asset('images/about/about-2.png') }}" align="right" alt="about image" class="img-responsive" style="height: 150px;">
@@ -114,22 +117,7 @@
             </div><!-- about content -->
           </div>
   				 
-          <div class="col-md-4 thumbnail">
-              <h4 style="font-size: 26px;color: #fff;background-color: #ffc000; padding: 10px;"  >News &amp; Events</h4>
-              <div >
-              <marquee direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" style="height: 350px;padding: 10px;">
-              @foreach ($news as $new)
-                 {{-- expr --}}
-               
-              <p class="bg-warning" style="color:red">  <img src="https://zippy.gfycat.com/DownrightSneakyBrant.gif" style="height:15px;"> {{$new->news}}  </p>   
-
-               @endforeach 
-             
-                              
-              </marquee>
-              </div>
-             
-          </div>
+         
   				
   			</div><!-- row -->
   		</div><!-- container -->
@@ -258,7 +246,7 @@
     
 
 <!-- Classes Start here -->
-    <section class="classes padding-120">
+    <section class="classes">
       <div class="container">
         <div class="section-header">
           <h3>Video</h3>
@@ -508,7 +496,7 @@
  
      
      $(window).load(function(){        
-   $('#myModal').modal('show');
+   // $('#myModal').modal('show');
     }); 
    
 </script>
