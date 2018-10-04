@@ -17,7 +17,7 @@ class HomeWorkController extends Controller
      */
     public function index()
     {
-        $homeworks =  HomeWork::whereMonth('created_at','=',\Carbon\Carbon::today()->month)->whereDay('created_at','=',\Carbon\Carbon::today()->day)->orderBy('id','desc')->paginate(20);
+      $homeworks =  HomeWork::whereYear('created_at','=',\Carbon\Carbon::today()->year)->whereMonth('created_at','=',\Carbon\Carbon::today()->month)->whereDay('created_at','=',\Carbon\Carbon::today()->day)->orderBy('id','desc')->paginate(20);
         $centers = Center::where('status',1)->get();
         $sessions = array_pluck(SessionDate::orderBy('id','desc')->get(['id','date'])->toArray(),'date', 'id');
 
