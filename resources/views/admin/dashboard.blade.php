@@ -14,7 +14,7 @@
        <li> <i class="fa fa-envelope"></i> SMS Balance</li>
         <li>
           @php
-            $url = "http://180.179.218.150/balance.asp?user=20084062&pwd=zad@14";
+            $url = "http://180.179.218.150/balance.asp?user=20089373&pwd=123456";
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $curl_scraped_page = curl_exec($ch);
