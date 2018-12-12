@@ -108,6 +108,7 @@
                             <tr>
                                 <th style="width: 10px">id</th>
                                 <th>Student Name</th>
+                                <th>Father's Name</th>
                                  @foreach($attendancetypes = App\AttendanceType::all() as $attendancetype)
                                 <th ><button type="button" data-click="{{ str_replace(' ', '_', strtolower($attendancetype->name)) }}"  class="btn btn-{{ $attendancetype->color }} btn-xs" ><i class="fa fa-{{ $attendancetype->icon }}"></i> {{ $attendancetype->name }}</button></th>
                                 @endforeach

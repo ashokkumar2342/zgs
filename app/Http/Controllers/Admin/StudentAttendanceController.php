@@ -33,7 +33,11 @@ class StudentAttendanceController extends Controller
         $students = Student::where(['center_id'=>$request->center,'session_id'=>$request->session,'class_id'=>$request->class,'section_id'=>$request->section])->get(['id','name','father_name','mother_name','class_id','section_id','session_id']); 
 
         foreach ($students as $student) {
-            $row = '<tr><td>'.$student->id.'</td><td>'.$student->name.'</td>';
+            $row = '<tr>
+            <td>'.$student->id.'</td>
+            <td>'.$student->name.'</td>
+            <td>'.$student->father_name.'</td>
+            ';
             foreach(\App\AttendanceType::all() as $attendance){
                 $checked = (\App\StudentAttendance::where(['student_id'=>$student->id,'attendance_type_id'=>$attendance->id,'date'=>date('Y-m-d',strtotime($request->date))])->count())?'checked':'';
                       $row .='<td ><label class="radio-inline"><input type="radio" '.$checked.' name="value['.$student->id.']" class="'. str_replace(' ', '_', strtolower($attendance->name)).'" value="'. $attendance->id .'"> '. $attendance->name .' </label></td>';
