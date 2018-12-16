@@ -8,7 +8,12 @@
         
         <a href="{{ route('admin.remarks.list') }}" >Today Remarks: {{ $dayRemarks }}</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="{{ route('admin.enquiry.list') }}" >Today Enquiry: {{ $enquirys }}</a> 
+        <a href="{{ route('admin.enquiry.list') }}" >Today Enquiry: {{ $enquirys }}</a>
+        @if( $enquirys !==0)
+        <img src="{{ asset('images/news.gif') }}" width="40px" alt="enquiry">
+        @endif
+         
+        
       </h1>
       <ol class="breadcrumb">
        <li> <i class="fa fa-envelope"></i> SMS Balance</li>
