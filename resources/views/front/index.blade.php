@@ -255,23 +255,40 @@
         <div class="row">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="class-item">
-              <iframe width="100%" height="250" src="https://www.youtube.com/embed/T1TzFMi1TE8" frameborder="0" allowfullscreen></iframe>          
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/MRQO2OBIipI" frameborder="0" allowfullscreen></iframe>          
             </div><!-- class item -->
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="class-item">               
-              <iframe width="100%" height="250" src="https://www.youtube.com/embed/LTeU2mlnc-U" frameborder="0" allowfullscreen></iframe>          
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/_u9B-50RUmc" frameborder="0" allowfullscreen></iframe>          
             </div><!-- class item -->
           </div>
            <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="class-item">
-              <iframe width="100%" height="250" src="https://www.youtube.com/embed/_Tu4lW8VODE" frameborder="0" allowfullscreen></iframe>          
+            <div class="class-item">               
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/aVjynEQTVeM" frameborder="0" allowfullscreen></iframe>          
             </div><!-- class item -->
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="class-item">               
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/UYFlH7pIFaI" frameborder="0" allowfullscreen></iframe>          
+            </div><!-- class item --> 
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="class-item">               
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/Wqv-pPMtVlM" frameborder="0" allowfullscreen></iframe>          
+            </div><!-- class item --> 
+          </div>
+
+ 
+           <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="class-item">
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/BS_J6r0O2Ck" frameborder="0" allowfullscreen></iframe>          
+            </div><!-- class item --> 
           </div>
           </div>
         </div><!-- row -->
         <div class="class-button">
-          <a href="#" class="button-default">See More </a>
+          <a href="https://www.youtube.com/channel/UCjWKaM74-ZjKk2p9mVEsf6Q/videos" target="blank" class="button-default">See More </a>
         </div>
       </div><!-- container -->
     </section><!-- classes -->
@@ -477,13 +494,13 @@
 
 <script type="text/javascript">
 // if(getCookie('modal') == ''){
-  $(document).ready(function(){
-     alert("The paragraph was clicked.");
-    console.log('dsffd');
-    $('#myModal').modal(true);
-  });
+  // $(document).ready(function(){
+  //    alert("The paragraph was clicked.");
+  //   console.log('dsffd');
+  //   $('#myModal').modal(true);
+  // });
   // setCookie("modal", 'add', 1);
-}
+//}
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @if(Session::has('message'))
