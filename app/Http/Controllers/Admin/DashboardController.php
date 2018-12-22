@@ -15,7 +15,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 class DashboardController extends Controller
 {
-    public function index(){
+    public function index(){ 
+         $ipinfoAPI="http://203.129.225.68/API/WebSMS/Http/v1.0a/index.php?method=request_routeid&username=zgsrtk1&password=123456&route_id=428&format=json";
+          $json =file_get_contents($ipinfoAPI);
+         $smsDetails= (array) json_decode($json); 
+        $smsBalance = '';
+        foreach ($smsDetails as $key=>$value) {
+         $smsBalance= $value->countavailable;
+        }
+       
         
         // $students= Student::all();
 
@@ -39,7 +47,7 @@ class DashboardController extends Controller
         
           
 
-         return view('admin.dashboard',compact('jindStudents','huddaStudents','omaxeStudents','birthday_students','dayRemarks','monthRemarks','allRemarks','omaxeAbsent','enquirys'));       
+         return view('admin.dashboard',compact('jindStudents','huddaStudents','omaxeStudents','birthday_students','dayRemarks','monthRemarks','allRemarks','omaxeAbsent','enquirys','smsBalance'));       
 
     }
      public function birthday(){        
