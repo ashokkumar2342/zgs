@@ -220,24 +220,44 @@
                           </div>
                       </div>
                        <div class="col-lg-6">   
-                       
-                          <div class="form-group">
-                              {{ Form::label('discount','Discount',['class'=>' control-label']) }}
-                             
-                                  @if($student->discount_type_id == 1)                    
-                                    {{ Form::number('discount',$discountfee=0,['class'=>'form-control','required']) }}     
-                                  @elseif($student->discount_type_id == 2)
-                                                        
-                                     @if($student->centers->id == 3)                                                       
-                                      {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1710' : '1490',['class'=>'form-control']) }}
-                                      @else
-                                      {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1410' : '1190',['class'=>'form-control']) }}
+                            @if ($student->session_id==3)
+                              <div class="form-group">
+                                  {{ Form::label('discount','Discount',['class'=>' control-label']) }}
+                                 
+                                      @if($student->discount_type_id == 1)                    
+                                        {{ Form::number('discount',$discountfee=0,['class'=>'form-control','required']) }}     
+                                      @elseif($student->discount_type_id == 2)
+                                                            
+                                         @if($student->centers->id == 3)                                                       
+                                          {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1710' : '1490',['class'=>'form-control']) }}
+                                          @else
+                                          {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount or ''.'',['class'=>'form-control']) }}
+                                          @endif
+                                      @elseif($student->discount_type_id == 3)
+                                        {{ Form::number('discount',$discountfee=0,['class'=>'form-control']) }}
                                       @endif
-                                  @elseif($student->discount_type_id == 3)
-                                    {{ Form::number('discount',$discountfee=0,['class'=>'form-control']) }}
-                                  @endif
-                              <p class="text-danger">{{ $errors->first('discount') }}</p>
-                          </div>
+                                  <p class="text-danger">{{ $errors->first('discount') }}</p>
+                              </div>
+                            @else 
+                            <div class="form-group">
+                                {{ Form::label('discount','Discount',['class'=>' control-label']) }}
+                               
+                                    @if($student->discount_type_id == 1)                    
+                                      {{ Form::number('discount',$discountfee=0,['class'=>'form-control','required']) }}     
+                                    @elseif($student->discount_type_id == 2)
+                                                          
+                                       @if($student->centers->id == 3)                                                       
+                                        {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1710' : '1490',['class'=>'form-control']) }}
+                                        @else
+                                        {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1410' : '1190',['class'=>'form-control']) }}
+                                        @endif
+                                    @elseif($student->discount_type_id == 3)
+                                      {{ Form::number('discount',$discountfee=0,['class'=>'form-control']) }}
+                                    @endif
+                                <p class="text-danger">{{ $errors->first('discount') }}</p>
+                            </div>
+                            @endif
+                          
                         
                       </div>
                   </div>
