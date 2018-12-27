@@ -26,7 +26,9 @@
             curl_close($ch);
           @endphp
 
-            <input type=""   readonly="" value="{{ $curl_scraped_page }}" name="">
+            <!--<input type=""   readonly="" value="{{ $curl_scraped_page }}" name="">-->
+            <input type=""   readonly="" value="{{ $smsBalance }}" name="">
+            </li>
             </li>
       </ol>
     </section>

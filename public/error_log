@@ -167,3 +167,5 @@
 [22-Dec-2018 15:42:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
 [22-Dec-2018 15:42:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
 [22-Dec-2018 15:46:19 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[23-Dec-2018 20:02:36 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[26-Dec-2018 20:22:04 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
