@@ -509,6 +509,7 @@
 </script>
 
 @endif
+<<<<<<< HEAD
 <script type="text/javascript">
  
      
@@ -517,6 +518,9 @@
     // $('#myModal').modal('show');
     // }); 
 =======
+=======
+<script type="text/javascript">  
+>>>>>>> 70102a8e6ecba31e9341c3021cd31316f54d59c4
      $(window).load(function(){        
     $('#myModal').modal('show');
    }); 

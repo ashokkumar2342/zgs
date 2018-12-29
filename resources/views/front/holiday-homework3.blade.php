@@ -61,10 +61,9 @@
                   <div class="sidebar-item">
                     <h3 class="sidebar-title">Quick links</h3>
                     <ul class="sidebar-categories">
-                      <li><a href="{{ route('front.art-craft') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Art & Craft</a></li>
-                      <li><a href="{{ route('front.dance') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dance</a></li>
-                      <li><a href="{{ route('front.music') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Music</a></li>
-                      <li><a href="{{ route('front.mini-theater') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Mini Theater</a></li>            
+                     <li><a href="{{ route('front.holiday-homework') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> H.W Huda Complex</a></li>
+                      <li><a href="{{ route('front.holiday-homework2') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i>  H.W Jind Road</a></li>
+                      <li><a href="{{ route('front.holiday-homework3') }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i> H.W OMAXE</a></li>            
                     </ul>
                     <br><br>
                     {{-- <img src="{{ asset('images/bb2.jpg') }}" class="thumbnail"> --}}
