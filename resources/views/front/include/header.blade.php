@@ -66,8 +66,8 @@
                    
                   <i class="icon fa fa-map-marker" aria-hidden="true"></i>
                   <div class="content">
-                    
-                    <p>Our Address <a href="{{ route('front.enquiry.form') }}" class="btn btn-danger" title="">Enquiry Form</a></p>
+
+                    <p>Our Address <a href="{{ route('front.enquiry') }}" class="btn btn-danger" title="">Enquiry Form</a></p>
                     <p style="font-size:13px;">Jr.<b> Zad Eduplex, HUDA Complex, Rohtak-124001(Hr.)</b></p>
                     <p style="font-size:13px;">Sr.<b> 8th Mile Stone, Rohtak-Jind Road, N.H. 71, Rk. (Hr.)</b></p></span>
                     <p style="font-size:13px;">Omaxe<b> OMAXE CIty, Delhi Road Rohtak -124001(Hr.)</b></p></span>
