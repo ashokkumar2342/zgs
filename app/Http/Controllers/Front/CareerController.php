@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Front;
 
 use App\Career;
+use App\ClassType;
+use App\DiscountType;
 use App\Enquiry;
 use App\Http\Controllers\Controller;
 use App\Mail\CareerMail;
 use App\Mail\EnquiryMail;
+use App\PaymentType;
+use App\SessionDate;
+use App\TransportRoute;
 use Illuminate\Http\Request;
 use Mail;
 
@@ -24,6 +29,24 @@ class CareerController extends Controller
      
         return view('front.enquiry');
     
+    }
+       public function enquiry2()
+    {
+     
+         
+
+        $paymenttypes = array_pluck(PaymentType::get(['id','name'])->toArray(),'name', 'id');
+        $classes = array_pluck(ClassType::get(['id','alias'])->toArray(),'alias', 'id');
+        $discounts = array_pluck(DiscountType::get(['id','name'])->toArray(),'name', 'id');
+        $sessions = array_pluck(SessionDate::orderBy('id','desc')->get(['id','date'])->toArray(),'date', 'id');
+        $routes = array_pluck(TransportRoute::get(['id','name'])->toArray(),'name', 'id');
+        return view('front.enquiry-form',compact('classes','routes','sessions','centers','paymenttypes','discounts'));
+    
+    }
+
+    public function enquiryStore2(Request $request)
+    {
+        return $request;
     }
 
      public function enquiryStore(Request $request)
