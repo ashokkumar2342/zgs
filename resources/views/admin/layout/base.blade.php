@@ -194,6 +194,14 @@
                         </ul>
                     </li>
                      <li class="treeview">
+                        <a href="{{ route('admin.holidayhomeworkFront.list') }}">
+                            <i class="fa fa-file-text-o"></i>
+                            <span>Holiday Homework On Website</span>
+                            
+                        </a>
+                        
+                    </li>
+                      <li class="treeview">
                         <a href="#">
                             <i class="fa fa-file-text-o"></i>
                             <span>Upload File</span>

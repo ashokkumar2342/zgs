@@ -6,12 +6,12 @@ use App\StudentDetails;
 use App\ClassType;
 use App\SessionDate;
 use App\Center;
-use App\HolidayHomework;
+use App\HolidayHomeworkFront;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
 
-class HolidayHomeworkController extends Controller
+class HolidayHomeworkFrontController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,10 +20,10 @@ class HolidayHomeworkController extends Controller
      */
     public function index()
     {
-        $holidayhomeworks =  HolidayHomework::all();
+        $holidayhomeworks =  HolidayHomeworkFront::all();
         $centers = Center::where('status',1)->get();
         $sessions = array_pluck(SessionDate::get(['id','date'])->toArray(),'date', 'id');
-        return view('admin.holidayhomework.list',compact('classes','sessions','sections','centers','holidayhomeworks'));
+        return view('admin.HolidayHomeworkFront.list',compact('classes','sessions','sections','centers','holidayhomeworks'));
     }
 
     /**
@@ -58,8 +58,8 @@ class HolidayHomeworkController extends Controller
         // $file->move(public_path('uploads');
         $file = $request->file('holidayhomework');
         $imageName = time().$file->getClientOriginalName();
-        $file->move(public_path('uploads/holidayhomework'),$imageName);
-        $holidayhomework= new HolidayHomeWork();
+        $file->move(public_path('uploads/holidayhomework/'),$imageName);
+        $holidayhomework= new HolidayHomeWorkFront();
         $holidayhomework->center_id= $request->center;        
         $holidayhomework->session_id= $request->session;
         $holidayhomework->class_id= $request->class;
@@ -67,7 +67,7 @@ class HolidayHomeworkController extends Controller
         $holidayhomework->holiday_homework = $imageName;
         $holidayhomework->title= $request->title;
         if($holidayhomework->save()){   
-            return redirect()->route('admin.holidayhomework.list',$holidayhomework->id)->with(['class'=>'success','message'=>' file Upload success ...']);
+            return redirect()->route('admin.holidayhomeworkFront.list',$holidayhomework->id)->with(['class'=>'success','message'=>' file Upload success ...']);
         }
         return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);
     }
@@ -78,10 +78,10 @@ class HolidayHomeworkController extends Controller
      * @param  \App\HolidayHomework  $holidayHomework
      * @return \Illuminate\Http\Response
      */
-    public function download(HolidayHomework $holidayhomework)
+    public function download(HolidayHomeworkFront $holidayhomework)
     {
         // return view('admin.holidayhomework.show',compact('holidayhomework'));
-        $path = public_path('uploads\holidayhomework/'.$holidayhomework->holiday_homework);
+        $path = public_path('uploads\holidayhomeworkFront/'.$holidayhomework->holiday_homework);
 
         return response()->download($path);
     }
@@ -92,7 +92,7 @@ class HolidayHomeworkController extends Controller
      * @param  \App\HolidayHomework  $holidayHomework
      * @return \Illuminate\Http\Response
      */
-    public function edit(HolidayHomework $holidayHomework)
+    public function edit(HolidayHomeworkFront $holidayHomework)
     {
        // $holidayhomeworks =  HolidayHomework::all();
        //  $centers = Center::where('status',1)->get();
@@ -107,7 +107,7 @@ class HolidayHomeworkController extends Controller
      * @param  \App\HolidayHomework  $holidayHomework
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HolidayHomework $holidayHomework)
+    public function update(Request $request, HolidayHomeworkFront $holidayHomework)
     {
         //
     }
@@ -118,8 +118,9 @@ class HolidayHomeworkController extends Controller
      * @param  \App\HolidayHomework  $holidayHomework
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, HolidayHomework $holidayHomework)
-    {
+    public function destroy($id)
+    { 
+     $holidayHomework= HolidayHomeworkFront::find($id);
         if ($holidayHomework->delete()) {
         return redirect()->back()->with(['class'=>'success','message'=>' file Deleted success ...']);
              

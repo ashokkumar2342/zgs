@@ -107,6 +107,20 @@ Route::group(['middleware' => 'admin'], function() {
         Route::post('{holidayhomework}/update', 'HolidayHomeworkController@update')->name('admin.holidayhomework.update');
         Route::get('{holidayHomework}/delete', 'HolidayHomeworkController@destroy')->name('admin.holidayhomework.delete');
     });
+      //------------------------Holiday Homework Front-------------------------------------------
+      Route::group(['prefix' => 'holidayhomeworkFront'], function() {
+         Route::get('add', 'HolidayHomeworkFrontController@create')->name('admin.holidayhomeworkFront.form');
+         Route::post('add', 'HolidayHomeworkFrontController@store')->name('admin.holidayhomeworkFront.post');
+         Route::get('list', 'HolidayHomeworkFrontController@index')->name('admin.holidayhomeworkFront.list');
+         Route::get('search', 'HolidayHomeworkFrontController@search')->name('admin.holidayhomeworkFront.search');
+         // Route::get('{holidayhomeworkFront}/show', 'HolidayHomeworkFrontController@show')->name('admin.holidayhomeworkFront.show');
+         Route::get('download/{holidayhomeworkFront}', 'HolidayHomeworkFrontController@download')->name('admin.holidayhomeworkFront.download');
+
+
+         Route::get('{holidayhomeworkFront}/edit', 'HolidayHomeworkFrontController@edit')->name('admin.holidayhomeworkFront.edit');
+         Route::post('{holidayhomeworkFront}/update', 'HolidayHomeworkFrontController@update')->name('admin.holidayhomeworkFront.update');
+         Route::get('delete/{holidayHomeworkFront}', 'HolidayHomeworkFrontController@destroy')->name('admin.holidayhomeworkFront.delete');
+     });
        //------------------------Datesheet-------------------------------------------
      Route::group(['prefix' => 'datesheet'], function() {
         Route::get('add', 'DatesheetController@create')->name('admin.datesheet.form');

@@ -512,9 +512,9 @@
 <script type="text/javascript">
  
      
-    // $(window).load(function(){        
-   // $('#myModal').modal('show');
-  //  }); 
+     $(window).load(function(){        
+    $('#myModal').modal('show');
+   }); 
    
 </script>
 

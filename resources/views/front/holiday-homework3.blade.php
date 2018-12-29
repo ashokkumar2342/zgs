@@ -20,91 +20,41 @@
         <div class="row">
           <div class="col-md-9 col-sm-9 col-xs-12">
              <h4>Summer Vacations (Holiday Homework) 2018-2019</h4>       
-               <table>
-                <thead>
-                <tr>  
-                  <th>Class Name</th>
-                  <th>Title</th>
-                  <th width="80px">Action</th>                                 
-                </tr>
-                </thead>
-                <tbody>
-                <tr>           
-                  <td>Pre Nursery</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/work-pre-nursery.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>
-                  <td>L.K.G</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/NUMBER-RAINBOW.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>
-                  <td>L.K.G</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Dear-Students.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>               
-                <tr>           
-                  <td>Grade 1</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/grade-1.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
-                  <td>Grade 2</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/grade-2.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                 <tr>           
-                  <td>Grade 7</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/grade-7.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
-                  <td>Class 3</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class-3.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
-                  <td>Class 4</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class-4.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                 <tr>           
-                  <td>Class 5</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class-5.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>               
-                <tr>           
-                  <td>Class 6</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class-6.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
+               <table class="table"> 
+               
+             <thead>
+             <tr>  
+               <th>Session</th>
+               <th>Class Name</th>
+            
+               <th>Title</th>
+               <th width="80px">Action</th>                  
+             </tr>
+             </thead>    
+               <tbody>
+                 @foreach (App\HolidayHomeworkFront::where('center_id',1)->where('session_id',2)->orderBy('class_id','asc')->get() as $holidayhomework)
+                  <tr> 
+                    
+                    <td>{{ $holidayhomework->sessions->date or '' }}</td>
+                    <td>{{ $holidayhomework->classes->name or '' }}</td>
+                   
+                    <td>{{ $holidayhomework->title }}</td> 
+                    
+                    <td align="center">
+                 
+                        <a class="btn-success btn-xs"  href="{{ asset('uploads/holidayhomework/'.$holidayhomework->holiday_homework) }}" target="blank"  ><i class="fa fa-download"></i></a>
+                     
+                    </td> 
+                  </tr>
+                  @endforeach
+                  </tbody>
+                
+                
               
-                                          
+             
+                              
                 </tbody>                 
-              </table>           
+              </table>          
                
               </div>
               <div class="col-md-3 col-sm-3 col-xs-12 sidebar">                          
