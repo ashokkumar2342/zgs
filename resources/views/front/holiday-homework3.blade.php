@@ -32,7 +32,7 @@
              </tr>
              </thead>    
                <tbody>
-                 @foreach (App\HolidayHomeworkFront::where('center_id',1)->where('session_id',2)->orderBy('class_id','asc')->get() as $holidayhomework)
+                 @foreach (App\HolidayHomeworkFront::where('center_id',3)->where('session_id',2)->orderBy('class_id','asc')->get() as $holidayhomework)
                   <tr> 
                     
                     <td>{{ $holidayhomework->sessions->date or '' }}</td>
