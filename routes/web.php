@@ -74,7 +74,9 @@ Route::get('video-gallery', 'Front\GalleryController@video')->name('front.video'
 });
 Route::get('career', 'Front\CareerController@index')->name('front.career');
 Route::get('enquiry', 'Front\CareerController@enquiry')->name('front.enquiry');
+Route::get('enquiry-form', 'Front\CareerController@enquiry2')->name('front.enquiry.form');
 Route::post('store', 'Front\CareerController@enquiryStore')->name('front.enquiry.post');
+Route::post('store2', 'Front\CareerController@enquiryStore2')->name('front.enquiry.post2');
 Route::post('career', 'Front\CareerController@store')->name('front.career.post');
 Route::get('contact', 'Front\ContactController@index')->name('front.contact');
 Route::post('contact', 'Front\ContactController@store')->name('front.contact.post');
