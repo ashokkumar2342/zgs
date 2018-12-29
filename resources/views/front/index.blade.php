@@ -512,9 +512,15 @@
 <script type="text/javascript">
  
      
+<<<<<<< HEAD
     // $(window).load(function(){        
     // $('#myModal').modal('show');
     // }); 
+=======
+     $(window).load(function(){        
+    $('#myModal').modal('show');
+   }); 
+>>>>>>> def8204a9901799168a40c566b747aa34b892b7d
    
 </script>
 

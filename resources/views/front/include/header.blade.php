@@ -9,11 +9,14 @@
         
             <!-- Modal content-->
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header"> 
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Winter Vacations Homework Holiday 2018-19 </h4>
               </div>
               <div class="modal-body">
-                <img style="width:100%" src="{{asset('images/paint.jpg')}}">
+                 <a href="{{ route('front.holiday-homework') }}" class="btn btn-success" title="Homework">Junior Wing - Huda Complex</a>
+                 <a href="{{ route('front.holiday-homework3') }}" class="btn btn-success" title="Homework">Senior Wing - Jind Road</a>
+                 <a href="{{ route('front.holiday-homework3') }}" class="btn btn-success" title="Homework">OMAXE</a>
               </div>
              
             </div>
@@ -63,7 +66,7 @@
                    
                   <i class="icon fa fa-map-marker" aria-hidden="true"></i>
                   <div class="content">
-                    <p>Our Address <a href="{{ route('front.enquiry') }}" class="btn btn-danger" title="">Enquiry Form</a></p>
+                    <p>Our Address <a href="{{ route('front.enquiry.form') }}" class="btn btn-danger" title="">Enquiry Form</a></p>
                     <p style="font-size:13px;">Jr.<b> Zad Eduplex, HUDA Complex, Rohtak-124001(Hr.)</b></p>
                     <p style="font-size:13px;">Sr.<b> 8th Mile Stone, Rohtak-Jind Road, N.H. 71, Rk. (Hr.)</b></p></span>
                     <p style="font-size:13px;">Omaxe<b> OMAXE CIty, Delhi Road Rohtak -124001(Hr.)</b></p></span>
