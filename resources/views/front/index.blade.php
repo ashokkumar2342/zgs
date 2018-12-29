@@ -506,8 +506,7 @@
 @if(Session::has('message'))
 <script type="text/javascript">
     Command: toastr["{{ Session::get('class') }}"]("{{ Session::get('message') }}");
-</script>
-
+</script> 
 @endif
 <<<<<<< HEAD
 <script type="text/javascript">
