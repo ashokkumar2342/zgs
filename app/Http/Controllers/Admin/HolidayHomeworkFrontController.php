@@ -23,7 +23,7 @@ class HolidayHomeworkFrontController extends Controller
         $holidayhomeworks =  HolidayHomeworkFront::all();
         $centers = Center::where('status',1)->get();
         $sessions = array_pluck(SessionDate::get(['id','date'])->toArray(),'date', 'id');
-        return view('admin.HolidayHomeworkFront.list',compact('classes','sessions','sections','centers','holidayhomeworks'));
+        return view('admin.holidayHomeworkFront.list',compact('classes','sessions','sections','centers','holidayhomeworks'));
     }
 
     /**
