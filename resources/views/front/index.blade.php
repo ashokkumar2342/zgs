@@ -508,22 +508,10 @@
     Command: toastr["{{ Session::get('class') }}"]("{{ Session::get('message') }}");
 </script> 
 @endif
-<<<<<<< HEAD
-<script type="text/javascript">
- 
-     
-<<<<<<< HEAD
-    // $(window).load(function(){        
-    // $('#myModal').modal('show');
-    // }); 
-=======
-=======
 <script type="text/javascript">  
->>>>>>> 70102a8e6ecba31e9341c3021cd31316f54d59c4
      $(window).load(function(){        
     $('#myModal').modal('show');
    }); 
->>>>>>> def8204a9901799168a40c566b747aa34b892b7d
    
 </script>
 
