@@ -509,9 +509,7 @@
 </script>
 
 @endif
-<script type="text/javascript">
- 
-     
+<script type="text/javascript">  
      $(window).load(function(){        
     $('#myModal').modal('show');
    }); 
