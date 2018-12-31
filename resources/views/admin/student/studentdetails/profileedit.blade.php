@@ -250,10 +250,11 @@
         transportSearch($('#route').val(),$(this).val());
     });
     $("#session").change(function(){
-       classSearch($("#session").val(),{{ $student->center_id }}); 
+      classSearch($(this).val()); 
     });
     $("#class").change(function(){
-        sectionSearch($(this).val());
+        sectionSearch($(this).val(),$("#session").val());
+         
     });
     $("#transport").change(function(){
         $("#route").prop('disabled',function(i,v){
@@ -276,7 +277,7 @@
         transportSearch($(this).val(),$('input[name="center"]:checked').val());
     });
     if ($("#session").val() > 0) {
-        classSearch($("#session").val(),{{ $student->center_id }}); 
+         classSearch($("#session").val(),{{ $student->class_id }});  
     }
     if (transportId > 0) {
         $("#transport").prop('checked',true);
@@ -290,7 +291,7 @@
      $.ajax({
        method: "get",
        url: "{{ route('admin.class.search2') }}",
-       data: { id: value, center_id: selectVal}
+      data: { id: value, center_id:{{ $student->center_id }} }
      })
      .done(function( response ) {            
          if(response.length>0){

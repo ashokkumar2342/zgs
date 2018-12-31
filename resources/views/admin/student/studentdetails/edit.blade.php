@@ -282,16 +282,17 @@
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script type="text/javascript">
     $( ".datepicker" ).datepicker({dateFormat:'dd-mm-yy'});
-    var transportId = '{{ $student->transport_id }}';
-    $("input[name='center']").change(function(){
-        transportSearch($('#route').val(),$(this).val());
-    });
-    $("#session").change(function(){
-       classSearch($(this).val()); 
-    });
-    $("#class").change(function(){
-        sectionSearch($(this).val());
-    });
+        var transportId = '{{ $student->transport_id }}';
+        $("input[name='center']").change(function(){
+            transportSearch($('#route').val(),$(this).val());
+        });
+        $("#session").change(function(){
+          classSearch($(this).val()); 
+        });
+        $("#class").change(function(){
+            sectionSearch($(this).val(),$("#session").val());
+             
+        });
     $("#transport").change(function(){
         $("#route").prop('disabled',function(i,v){
             if(v){
@@ -313,73 +314,73 @@
         transportSearch($(this).val(),$('input[name="center"]:checked').val());
     });
     if ($("#session").val() > 0) {
-        classSearch($("#session").val(),{{ $student->center_id }}); 
-    }
-    if (transportId > 0) {
-        $("#transport").prop('checked',true);
-        $("#route").prop('disabled',function(i,v){return !v;});
-        $("#driver").html('');
-    }
-    routeSearch();
-    function classSearch(value,selectVal=null){
-        var selected = null;
-        $('#class').html('<option value="">Searching ...</option>');
-        $.ajax({
-          method: "get",
-          url: "{{ route('admin.class.search2') }}",
-          data: { id: value, center_id: selectVal}
-        })
-        .done(function( response ) {            
-            if(response.length>0){
-                $('#class').html('<option value="">Select Class</option>');
-                for (var i = 0; i < response.length; i++) {
-                    if(selectVal>0){
-                        selected = (selectVal==response[i].id)?'selected':'';
-                        sectionSearch(selectVal,value,{{ $student->section_id }});
-                    }
-                    
-                    $('#class').append('<option value="'+response[i].id+'"'+selected+'>'+response[i].alias+'</option>');
-                } 
-            }
-            else{
-                $('#class').html('<option value="">Not found</option>');
-            }
-            
-        });
-    }
-    function sectionSearch (value,sessions,selectVal=null){
-        var selected = null;
-        $('#section').html('<option value="">Searching ...</option>'); 
-        $('#formFee').html('sessions');       
-        $.ajax({
-          method: "get",
-          url: "{{ route('admin.section.search') }}",
-          data: { id: value, session:sessions, center_id: $('input[name="center"]:checked').val() }
-        })
-        .done(function( response ) {
-            $('#formFee').html(response.fee);
-            if(response.section.length>0){
-               $('#section').html('<option value="">Select Section</option>');
-                for (var i = 0; i < response.section.length; i++) {
-                    if(selectVal>0){
-                        selected = (selectVal==response.section[i].id)?'selected':'';
-                    }
-                    $('#section').append('<option value="'+response.section[i].id+'"'+selected+'>'+response.section[i].name+'</option>');
-                } 
-                if($("#transport").is(":checked")){
-                    $('#transport_fees').attr('disabled',false);
-                }
-                else{
-                    $('#transport_fees').attr('disabled',true);
-                    $('#total_fee').val(parseInt($('#total_fee').val())-parseInt($('#transport_fees').val()));
-                }
-            }
-            else{
-                $('#section').html('<option value="">Not found</option>');
-            }
-            
-        });
-    }
+             classSearch($("#session").val(),{{ $student->class_id }});  
+        }
+        if (transportId > 0) {
+            $("#transport").prop('checked',true);
+            $("#route").prop('disabled',function(i,v){return !v;});
+            $("#driver").html('');
+        }
+        routeSearch();
+     function classSearch(value,selectVal=null){
+         var selected = null;
+         $('#class').html('<option value="">Searching ...</option>');
+         $.ajax({
+           method: "get",
+           url: "{{ route('admin.class.search2') }}",
+          data: { id: value, center_id:{{ $student->center_id }} }
+         })
+         .done(function( response ) {            
+             if(response.length>0){
+                 $('#class').html('<option value="">Select Class</option>');
+                 for (var i = 0; i < response.length; i++) {
+                     if(selectVal>0){
+                         selected = (selectVal==response[i].id)?'selected':'';
+                         sectionSearch(selectVal,value,{{ $student->section_id }});
+                     }
+                     
+                     $('#class').append('<option value="'+response[i].id+'"'+selected+'>'+response[i].alias+'</option>');
+                 } 
+             }
+             else{
+                 $('#class').html('<option value="">Not found</option>');
+             }
+             
+         });
+     }
+     function sectionSearch (value,sessions,selectVal=null){
+         var selected = null;
+         $('#section').html('<option value="">Searching ...</option>'); 
+         $('#formFee').html('sessions');       
+         $.ajax({
+           method: "get",
+           url: "{{ route('admin.section.search') }}",
+           data: { id: value, session:sessions, center_id: $('input[name="center"]:checked').val() }
+         })
+         .done(function( response ) {
+             $('#formFee').html(response.fee);
+             if(response.section.length>0){
+                $('#section').html('<option value="">Select Section</option>');
+                 for (var i = 0; i < response.section.length; i++) {
+                     if(selectVal>0){
+                         selected = (selectVal==response.section[i].id)?'selected':'';
+                     }
+                     $('#section').append('<option value="'+response.section[i].id+'"'+selected+'>'+response.section[i].name+'</option>');
+                 } 
+                 if($("#transport").is(":checked")){
+                     $('#transport_fees').attr('disabled',false);
+                 }
+                 else{
+                     $('#transport_fees').attr('disabled',true);
+                     $('#total_fee').val(parseInt($('#total_fee').val())-parseInt($('#transport_fees').val()));
+                 }
+             }
+             else{
+                 $('#section').html('<option value="">Not found</option>');
+             }
+             
+         });
+     }
     function routeSearch (){
         $('#route').html('<option value="">Searching ...</option>'); 
         $.ajax({
