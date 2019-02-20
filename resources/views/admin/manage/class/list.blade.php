@@ -5,7 +5,7 @@
       	<div class="box">
             <div class="box-header">
               <h3 class="box-title">Class List</h3>
-              <span style="float: right"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_class">Add Class</button></span>
+              {{-- <span style="float: right"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_class">Add Class</button></span> --}}
 
 
             </div>
