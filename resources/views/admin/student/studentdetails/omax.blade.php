@@ -44,12 +44,17 @@
                  
                 
                 <tr>
-                  <td>{{ $student->username }}</td>
-                  <td>{{ $student->tmp_pass }}</td>
-                  <td>{{ $student->classes->alias or '' }}</td>
+                 <td>{{ $student->username }}</td>
+                  <td>{{ $student->tmp_pass }}</td>                   
+                  <td>{{ $student->sessions->date or '' }}</td>
+                  <td>{{ $student->classes->name or '' }}</td>
                   <td>{{ $student->sections->name or '' }}</td>
                   <td>{{ $student->name }}</td>
                   <td>{{ $student->father_name }}</td>
+                  <td>{{ $student->mother_name }}</td>
+                  <td>{{ $student->mobile_sms }}</td>
+                   <td>{{ $student->address}}</td>
+
                   <td>{{ $student->totalFee }}</td>
                   <td>{{ $student->totalFee - (App\StudentFee::where('student_id',$student->id)->sum('discount') + App\StudentFee::where('student_id',$student->id)->sum('received_fee'))}}</td>
                   <td align="center">
