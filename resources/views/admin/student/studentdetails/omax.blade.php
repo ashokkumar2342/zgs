@@ -21,14 +21,18 @@
               <table id="dataTable" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>               
-                  <th>SID</th>
-                  <th>Password</th>                   
+                 <th>SID</th>
+                  <th>Password</th> 
+                  <th>Session</th>
+
                   <th>Class</th>
                   <th>Section</th>
                   <th>Name</th>
 
-                  <th>Father Name</th>    
+                  <th>Father Name</th>   
+                   <th>Mother's Name</th>
                   <th>Mobile SMS</th>
+                  <th>Address</th>
 
                   <th>Total Fees</th>
                   <th>Balance Fees</th>
@@ -41,13 +45,11 @@
                 
                 <tr>
                   <td>{{ $student->username }}</td>
-                  <td>{{ $student->tmp_pass }}</td>                   
+                  <td>{{ $student->tmp_pass }}</td>
                   <td>{{ $student->classes->alias or '' }}</td>
                   <td>{{ $student->sections->name or '' }}</td>
                   <td>{{ $student->name }}</td>
                   <td>{{ $student->father_name }}</td>
-                  <td>{{ $student->mobile_sms }}</td>
-
                   <td>{{ $student->totalFee }}</td>
                   <td>{{ $student->totalFee - (App\StudentFee::where('student_id',$student->id)->sum('discount') + App\StudentFee::where('student_id',$student->id)->sum('received_fee'))}}</td>
                   <td align="center">
