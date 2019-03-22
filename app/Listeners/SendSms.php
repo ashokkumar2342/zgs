@@ -50,6 +50,9 @@ class SendSms
         
         // $msg=urlencode($event->message);
  
+ 
+        // $url = "http://bulksms.innovusine.com/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13"; 
+ 
         // $url = "http://bulksms.innovusine.com/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13";
         // $ch = curl_init($url);
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -58,7 +61,7 @@ class SendSms
       
         // Log::info($event->mobile.' : '.$event->message);
 
-        $msg=urlencode($event->message);
+       $msg=urlencode($event->message);
         
         
         $url = "http://203.129.225.68/API/WebSMS/Http/v1.0a/index.php?username=zgsrtk1&password=123456&sender=zgsrtk&to=$event->mobile&message=$msg&reqid=1&format=json&route_id=428&sendondate=date()";

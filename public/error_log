@@ -112,3 +112,72 @@
 [05-Aug-2018 12:39:40 Asia/Kolkata] PHP Fatal error:  Class 'App\GalleryCategory' not found in /home/zadglobalschool/public_html/app/Http/Controllers/Admin/GalleryCategoryController.php on line 18
 [09-Sep-2018 13:29:30 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
 [09-Sep-2018 13:30:07 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[06-Nov-2018 17:04:43 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[13-Nov-2018 23:17:10 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[13-Nov-2018 23:18:29 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[13-Nov-2018 23:18:44 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[13-Nov-2018 23:19:41 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[17-Nov-2018 22:17:29 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[17-Nov-2018 22:18:45 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[27-Nov-2018 09:01:33 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[22-Dec-2018 15:24:05 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:24:06 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:35:37 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:35:57 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:35:58 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:35:59 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:02 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:04 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:05 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:05 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:06 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:09 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:11 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:14 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:39:16 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:24 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:29 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:32 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:34 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:36 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:38 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:40 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:43 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:45 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:47 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:49 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:52 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:53 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:53 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:53 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:53 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:53 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:55 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:55 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:57 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:57 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:57 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:57 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:58 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:41:58 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:00 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:00 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:00 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:42:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[22-Dec-2018 15:46:19 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
+[23-Dec-2018 20:02:36 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[26-Dec-2018 20:22:04 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[08-Jan-2019 11:15:29 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[08-Jan-2019 11:15:41 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:48:43 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:53:25 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:53:45 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[16-Jan-2019 18:49:57 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[25-Jan-2019 10:44:28 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[25-Jan-2019 10:45:53 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[11-Feb-2019 12:34:54 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[18-Feb-2019 18:29:49 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[04-Mar-2019 20:20:56 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[04-Mar-2019 20:21:14 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121

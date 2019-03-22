@@ -138,7 +138,7 @@ class PromoteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         $data = $request->except('_token');
 
          
@@ -152,7 +152,7 @@ class PromoteController extends Controller
             $student->id = $data['student_id'][$i];
             $student->class_id = $data['class_id'];
             $student->section_id = $data['section_id'];
-            $student->session_id = 2;
+            $student->session_id = $data['session_id'];
             $student->save();
             echo $student;
              
