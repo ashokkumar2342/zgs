@@ -30,11 +30,11 @@ class DashboardController extends Controller
         // $centers = Centers::all();     
 
         // return view('admin.dashboard',compact('centers'));
-         $huddaStudents= Student::where('center_id',1)->where('session_id',2)->where('deleted_at',null)
+         $huddaStudents= Student::where('center_id',1)->where('deleted_at',null)
          ->count();
-         $jindStudents= Student::where('center_id',2)->where('session_id',2)->where('deleted_at',null)
+         $jindStudents= Student::where('center_id',2)->where('deleted_at',null)
          ->count();
-         $omaxeStudents= Student::where('center_id',3)->where('session_id',2)->where('deleted_at',null)
+         $omaxeStudents= Student::where('center_id',3)->where('deleted_at',null)
          ->count();
          $birthday_students= Student::whereMonth('dob','=',\Carbon\Carbon::today()->month)->whereDay('dob','=',\Carbon\Carbon::today()->day)->count();
 
