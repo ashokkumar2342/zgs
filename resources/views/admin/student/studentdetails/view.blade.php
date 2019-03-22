@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endpush
 @section('body')
-
+@php
+   $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
+@endphp
     <section class="content">
       <div class="box">       
         <div class="box-header">
@@ -11,7 +13,7 @@
          <h4  style="float:left;">Student details</h4>
          <a    class="btn btn-warning btn-sm" title="Edit Student" href="{{ route('admin.student.totalfeeedit',$student->id) }}"><i class="fa fa-pencil"></i> Edit Total Fee</a>
           <a    class="btn btn-warning btn-sm" title="Edit Student" href="{{ route('admin.student.profileedit',$student->id) }}"><i class="fa fa-pencil"></i> Edit Profile</a> 
-          @if(count($student->studentFee) < $student->paymentType->times)<li><button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#addfee">Add Fees</button></li>@endif
+          @if(count($studentFees) < $student->paymentType->times)<li><button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#addfee">Add Fees</button></li>@endif
         </ol>
       </div>
       <!-- /.box-header -->
@@ -21,7 +23,8 @@
                 <div class="col-md-6">
                 @php
                   $totalDepFee = 0;
-                 foreach ($student->studentFee as $studentFe):
+                 
+                 foreach ($studentFees as $studentFe):
                    $totalDepFee += $studentFe->discount+$studentFe->received_fee;
                  endforeach
                  @endphp
@@ -116,9 +119,10 @@
             <tr><th>Installment Fees </th><th>Discount</th><th>Receipt No</th><th>Receipt Date</th><th>Other Fee</th><th>Received Fees</th><th>Custom</th></tr>
             @php
               $totalFee=0;
-              $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
+               
             @endphp
             @foreach($studentFees as $studentFee)
+           
             @php
               $totalFee+=$studentFee->received_fee+$studentFee->discount;
             @endphp
@@ -138,7 +142,7 @@
             @endforeach
 </table>
 </section>
-@if($student->payment_type_id && count($student->studentFee) < $student->paymentType->times )
+@if($student->payment_type_id && count($studentFees) < $student->paymentType->times )
 @php
   @$balFee=$student->classFee->total_fee-$totalFee ;
 @endphp
@@ -157,7 +161,7 @@
       <div class="row">
       
              {!! Form::hidden('student_id', $student->id, []) !!}
-             @if(count($student->studentFee) < 1)
+             @if(count($studentFees) < 1)
              
              {!! Form::hidden('session_id', $student->session_id, []) !!}
              {!! Form::hidden('admission_fees', $student->admission_fee, []) !!}
@@ -173,6 +177,7 @@
              {!! Form::hidden('transport_fee', ($student->transport_fee/$student->paymentType->times), []) !!}
              
             @else
+            {!! Form::hidden('session_id', $student->session_id, []) !!}
              {!! Form::hidden('activity_charges', ($student->activity_charge/$student->paymentType->times), []) !!}
              {!! Form::hidden('smart_class_fees', ($student->smart_class_fee/$student->paymentType->times), []) !!}
              {!! Form::hidden('sms_charges', ($student->sms_charge/$student->paymentType->times), []) !!}
@@ -191,7 +196,7 @@
                           </div>
                       </div>
                        <div class="col-lg-6">            
-                       @if(count($student->studentFee) < 1)
+                       @if(count($studentFees) < 1)
                           <div class="form-group">
                               {{ Form::label('installment_fees','Installment Fees',['class'=>' control-label']) }}                         
                               {{ Form::text('installment_fees',round(@$instalfee=($student->firsttime_fee+($student->installment_fee/$student->paymentType->times))),['class'=>'form-control','required','readonly']) }}
