@@ -95,6 +95,7 @@ class StudentController extends Controller
         
         $studentFee = new StudentFee();
         $studentFee->student_id = $request->student_id;
+        $studentFee->session_id = $request->session_id;
         $studentFee->total_fees = $request->total_fees;
         $studentFee->other_fee = $request->other_fee;
         $studentFee->discount_type_id = $request->discount_type_id;

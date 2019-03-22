@@ -37,7 +37,7 @@ class ClassTypeController extends Controller
 
      public function search2(Request $request)
     {
-       
+        
         $classFee = ClassFee::where(['class_fees.center_id'=>$request->center_id,'class_fees.session_id'=>$request->id])->join('class_types','class_types.id','=','class_fees.class_id')->get(['class_types.id','class_types.name','class_types.alias']); 
         return response()->json($classFee);
     }

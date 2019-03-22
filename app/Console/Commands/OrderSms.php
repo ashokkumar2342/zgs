@@ -6,6 +6,7 @@ use App\Events\SendSmsEvent;
 use Event;
 use App\Order;
 use App\Student;
+use App\StudentAttendance;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
 class OrderSms extends Command
@@ -50,6 +51,14 @@ class OrderSms extends Command
                 
              }
          }
+         //if(\Carbon\Carbon::now()->format('H:i') == '13:00'){
+              $students= StudentAttendance::where('attendance_type_id',2)->whereDate('created_at',date('Y-m-d'))->get();
+              foreach($students as $student){
+                 // Event::fire(new SendSmsEvent($student->mobile_sms,'Dear Parents, Your Child is Today Absent.'));
+                  Log::info('Dear Parents, Your Child is Today Absent.'.$student->mobile_sms);
+                 
+              }
+          //}
 
     }
 }

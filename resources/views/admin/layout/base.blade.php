@@ -340,6 +340,8 @@
     <script src="{{ asset('admin_asset/dist/js/app.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('admin_asset/dist/js/demo.js') }}"></script>
+    <script src={!! asset('admin_asset/dist/js/validation/common.js?ver=1') !!}></script>
+    <script src={!! asset('admin_asset/dist/js/customscript.js?ver=1') !!}></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @stack('scripts')
 </body>

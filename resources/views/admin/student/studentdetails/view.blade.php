@@ -116,8 +116,9 @@
             <tr><th>Installment Fees </th><th>Discount</th><th>Receipt No</th><th>Receipt Date</th><th>Other Fee</th><th>Received Fees</th><th>Custom</th></tr>
             @php
               $totalFee=0;
+              $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
             @endphp
-            @foreach($student->studentFee as $studentFee)
+            @foreach($studentFees as $studentFee)
             @php
               $totalFee+=$studentFee->received_fee+$studentFee->discount;
             @endphp
@@ -158,6 +159,7 @@
              {!! Form::hidden('student_id', $student->id, []) !!}
              @if(count($student->studentFee) < 1)
              
+             {!! Form::hidden('session_id', $student->session_id, []) !!}
              {!! Form::hidden('admission_fees', $student->admission_fee, []) !!}
              {!! Form::hidden('admission_form_fees', $student->admission_form_fee, []) !!}
              {!! Form::hidden('registration_fees', $student->registration_fee, []) !!}
@@ -229,9 +231,9 @@
                                       @elseif($student->discount_type_id == 2)
                                                             
                                          @if($student->centers->id == 3)                                                       
-                                          {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1710' : '1490',['class'=>'form-control']) }}
+                                         {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount.'',['class'=>'form-control']) }}
                                           @else
-                                          {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount or ''.'',['class'=>'form-control']) }}
+                                          {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount.'',['class'=>'form-control']) }}
                                           @endif
                                       @elseif($student->discount_type_id == 3)
                                         {{ Form::number('discount',$discountfee=0,['class'=>'form-control']) }}
