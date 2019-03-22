@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endpush
 @section('body')
-
+@php
+  $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
+@endphp
     <section class="content">
      <div class="box">       
         <div class="box-header">
@@ -18,14 +20,14 @@
                 <div class="col-md-6">
                {{--  @php
                   $totalDepFee = 0;
-                 foreach ($student->studentFee as $studentFe):
+                 foreach ($studentFees as $studentFe):
                    $totalDepFee += $studentFe->discount+$studentFe->received_fee;
                  endforeach
                  @endphp
                  <h4> Balance : <b>{{$student->classFee->total_fee-$totalDepFee }}</b></h4>  --}}  
                   @php
                   $totalDepFee = 0;
-                 foreach ($student->studentFee as $studentFe):
+                 foreach ($studentFees as $studentFe):
                    $totalDepFee += $studentFe->discount+$studentFe->received_fee;
                  endforeach
                  @endphp
@@ -44,7 +46,7 @@
               @php
                 $totalFee=0;
               @endphp
-              @foreach($student->studentFee as $studentFee)
+              @foreach($studentFees as $studentFee)
               @php
                 $totalFee+=$studentFee->received_fee+$studentFee->discount;
               @endphp
