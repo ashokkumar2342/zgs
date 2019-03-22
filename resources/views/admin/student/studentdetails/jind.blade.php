@@ -58,7 +58,7 @@
                    <td>{{ $student->address}}</td>
 
                   <td>{{ $student->totalFee }}</td>
-                  <td>{{ $student->totalFee - (App\StudentFee::where('student_id',$student->id)->sum('discount') + App\StudentFee::where('student_id',$student->id)->sum('received_fee'))}}</td>
+                    <td>{{ $student->totalFee - (App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->sum('discount') + App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->sum('received_fee'))}}</td>
                   <td align="center">
              <a class="btn btn-primary btn-xs" title="View Student" href="{{ route('admin.student.view',$student->id) }}"><i class="fa fa-eye"></i></a>
                     <a class="btn btn-warning btn-xs" title="Edit Student" href="{{ route('admin.student.edit',$student->id) }}"><i class="fa fa-pencil"></i></a>
