@@ -26,14 +26,12 @@
             curl_close($ch);
           @endphp
 
-<<<<<<< HEAD
+
           {{-- <input type=""   readonly="" value="{{ $curl_scraped_page }}" name=""> --}}
-            <input type=""   readonly="" value="{{ $smsBalance }}" name="">
-=======
-            <!--<input type=""   readonly="" value="{{ $curl_scraped_page }}" name="">-->
-            <input type=""   readonly="" value="{{ $smsBalance }}" name="">
+            <input type=""   readonly="" value="{{ $smsBalance }}" name=""> 
+             
             </li>
->>>>>>> 97698be0583077eb3c87796919ebc3cace082c4f
+ 
             </li>
       </ol>
     </section>
