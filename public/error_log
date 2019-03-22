@@ -169,3 +169,15 @@
 [22-Dec-2018 15:46:19 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/zadglobalschool/public_html/app/Listeners/SendSms.php on line 53
 [23-Dec-2018 20:02:36 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
 [26-Dec-2018 20:22:04 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 98
+[08-Jan-2019 11:15:29 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[08-Jan-2019 11:15:41 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:48:43 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:53:25 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[09-Jan-2019 11:53:45 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[16-Jan-2019 18:49:57 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[25-Jan-2019 10:44:28 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[25-Jan-2019 10:45:53 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[11-Feb-2019 12:34:54 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[18-Feb-2019 18:29:49 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[04-Mar-2019 20:20:56 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
+[04-Mar-2019 20:21:14 Asia/Kolkata] PHP Fatal error:  Call to a member function store() on null in /home/zadglobalschool/public_html/app/Http/Controllers/Front/CareerController.php on line 121
