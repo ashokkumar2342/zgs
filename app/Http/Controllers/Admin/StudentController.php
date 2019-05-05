@@ -558,5 +558,55 @@ class StudentController extends Controller
     {
         return view('admin.student.studentdetails.feeReceipt',compact('studentFee'));
     }
+     public function studentClassByFeeForm()
+    {
+        $centers = Center::where('status',1)->get();
+         
+         
+        
+        $sessions = array_pluck(SessionDate::orderBy('id','desc')->get(['id','date'])->toArray(),'date', 'id');
+      
+        return view('admin.student.fee.class_wise_fee_form',compact('sessions','centers'));
+     
+    }
+    
+    public function studentClassByFeeFormDetails(Request $request)
+    {  
+        $centers = Center::where('status',1)->get();
+        $paymenttypes = array_pluck(PaymentType::get(['id','name'])->toArray(),'name', 'id');
+    
+        $discounts = array_pluck(DiscountType::get(['id','name'])->toArray(),'name', 'id');
+        $sessions = array_pluck(SessionDate::orderBy('id','desc')->get(['id','date'])->toArray(),'date', 'id');
+        $routes = array_pluck(TransportRoute::get(['id','name'])->toArray(),'name', 'id');
+           $student = Student::where('class_id',$request->id)->first(); 
+        $routes = array_pluck(TransportRoute::get(['id','name'])->toArray(),'name', 'id');
+        $data= view('admin.student.fee.fee_edit_form',compact('student','classes','routes','sessions','centers','paymenttypes','discounts'))->render();
+        return response()->json(['data'=>$data]);
+    }
+
+    public function studentClassByFeeUpdate(Request $request)
+    {  
+          $students =Student::where(['center_id'=>$request->center,'session_id'=>$request->session,'class_id'=>$request->class])->get();
+            foreach ($students as  $student) {
+                $data = Student::find($student->id);
+                $data->totalFee= $request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges+$request->caution_money+$request->activity_charges+$request->smart_class_fees+$request->tution_fees+$request->sms_charges+$student->transport_fee;
+                $data->firsttime_fee = ($request->admission_fees+$request->registration_fees+$request->admission_form_fees+$request->annual_charges+$request->caution_money) ;
+                $data->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$student->transport_fee);
+
+                $data->admission_fee=$request->admission_fees;
+                $data->admission_form_fee=$request->admission_form_fees;
+                $data->registration_fee=$request->registration_fees;
+                $data->annual_charge=$request->annual_charges;
+                $data->caution_money=$request->caution_money;
+                $data->activity_charge=$request->activity_charges; 
+                $data->smart_class_fee=$request->smart_class_fees;
+                $data->tution_fee=$request->tution_fees;
+                $data->sms_charge=$request->sms_charges;
+                $data->save(); 
+            }
+            return redirect()->back()->with(['class'=>'success','message'=>'Student Fee Update Successfully']);
+    }
+
+
    
 }

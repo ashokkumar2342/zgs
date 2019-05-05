@@ -111,6 +111,7 @@
                             <li><a href="{{ route('admin.promote.list') }}"><i class="fa fa-circle-o"></i> List section By</a></li>
                             <li><a href="{{ route('admin.promote.classBy') }}"><i class="fa fa-circle-o"></i> Class By</a></li>
                             <li><a href="{{ route('admin.transfer.form') }}"><i class="fa fa-circle-o"></i> Transfer Centre</a></li>
+                            <li><a href="{{ route('admin.student.class.fees.form') }}"><i class="fa fa-circle-o"></i>Class Fee Update</a></li>
 
                         </ul>
                     </li>
