@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-9 col-xs-12">
-             <h4>Summer Vacations (Holiday Homework) 2018-2019</h4>       
+             <h4> SUMMER VACATION HOLIDAY HOMEWORK 2018-2019</h4>      
                <table class="table"> 
                
              <thead>
@@ -32,7 +32,7 @@
              </tr>
              </thead>    
                <tbody>
-                 @foreach (App\HolidayHomeworkFront::where('center_id',3)->where('session_id',2)->orderBy('class_id','asc')->get() as $holidayhomework)
+                 @foreach (App\HolidayHomeworkFront::where('center_id',3)->where('session_id',3)->orderBy('class_id','asc')->get() as $holidayhomework)
                   <tr> 
                     
                     <td>{{ $holidayhomework->sessions->date or '' }}</td>

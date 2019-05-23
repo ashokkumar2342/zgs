@@ -16,13 +16,13 @@ use Illuminate\Support\Carbon;
 class DashboardController extends Controller
 {
     public function index(){ 
-         $ipinfoAPI="http://203.129.225.68/API/WebSMS/Http/v1.0a/index.php?method=request_routeid&username=zgsrtk1&password=123456&route_id=428&format=json";
-          $json =file_get_contents($ipinfoAPI);
-         $smsDetails= (array) json_decode($json); 
-         $smsBalance = '';
-        foreach ($smsDetails as $key=>$value) {
-         $smsBalance= $value->countavailable;
-        }
+        //  $ipinfoAPI="http://203.129.225.68/API/WebSMS/Http/v1.0a/index.php?method=request_routeid&username=zgsrtk1&password=123456&route_id=428&format=json";
+        //   $json =file_get_contents($ipinfoAPI);
+        //  $smsDetails= (array) json_decode($json); 
+        //  $smsBalance = '';
+        // foreach ($smsDetails as $key=>$value) {
+        //  $smsBalance= $value->countavailable;
+        // }
        
         
         // $students= Student::all();

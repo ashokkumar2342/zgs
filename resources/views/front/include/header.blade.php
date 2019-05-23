@@ -10,7 +10,7 @@
             <div class="modal-content">
               <div class="modal-header"> 
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Winter Vacations Homework Holiday 2018-19 </h4>
+                <h4 class="modal-title">SUMMER VACATION HOLIDAY HOMEWORK 2019-20 </h4>
               </div>
               <div class="modal-body">
                  <a href="{{ route('front.holiday-homework') }}" class="btn btn-success" title="Homework">Junior Wing - Huda Complex</a>
