@@ -30,9 +30,15 @@
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div> -->
+
     <!-- Preloader end here -->
+    <style >
+      .header-two .top-contents .content p {
+    margin: 0px;
+    color: #fffcfc;
+    </style>
   	<header class="header-two">
-  		<div class="header-top">
+  		<div class="header-top" style="background-color:#ffc000;color:#fff">
   			<div class="container">
   				<div class="row">
             <div class="col-md-3">
