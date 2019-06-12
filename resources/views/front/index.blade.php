@@ -4,6 +4,24 @@
 @endpush
 @section('body')   
    <!-- Banner Start here -->
+   <section class=" container text-center" style="margin-top: 10px;margin-bottom:  10px">
+     <div  class="row">
+       <div  class="col-lg-4 bg-primary"  style="background-color: blue">
+         <h4 style="color:#fff">School Circulars</h4>
+       </div>
+       <a href="https://smarthubeducation.hdfcbank.com/SmartFees/Landing.action?instId=4762" title="Online Pay" target="_blank">
+       <div  class="col-lg-4 bg-info" style="background-color: green">
+         <h4 style="color:#fff">Pay Online Fee</h4> 
+       </div>
+       </a>
+       <div  class="col-lg-4 bg-danger"  style="background-color: red">
+         <h4 style="color:#fff">Admission Form</h4> 
+          
+       </div>
+       
+     </div>
+     
+   </section>
     <section class="banner banner-two hidden-xs">
       <div class="banner-slider swiper-container">
         <div class="swiper-wrapper">           
@@ -37,30 +55,13 @@
       </div><!-- swiper-container -->
     </section><!-- banner -->
     <!-- Banner End here -->
-    <section class=" container text-center" style="margin-top: 10px;margin-bottom:  10px">
-      <div  class="row">
-        <div  class="col-lg-4 bg-primary"  style="background-color: blue">
-          <h4 style="color:#fff">School Circulars</h4>
-        </div>
-        <a href="https://smarthubeducation.hdfcbank.com/SmartFees/Landing.action?instId=4762" title="Online Pay" target="_blank">
-        <div  class="col-lg-4 bg-info" style="background-color: green">
-          <h4 style="color:#fff">pay Online Fee</h4> 
-        </div>
-        </a>
-        <div  class="col-lg-4 bg-danger"  style="background-color: red">
-          <h4 style="color:#fff">Online Vacancy Form</h4> 
-           
-        </div>
-        
-      </div>
-      
-    </section>
+   
     <section class="facility facility-two" style="background-color: #f9f7f7;">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 thumbnail">
               
-                 <h4 style="font-size: 26px;color: #fff;background-color: #ffc000; padding: 10px;"  >News &amp; Events</h4>
+                 <h4 style="font-size: 26px;color: #fff;background-color: #ffc000; padding: 10px;"  >Notice</h4>
                  <div >
                  <marquee direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" style="height: 350px;padding: 10px;">
                  @foreach ($news as $new)

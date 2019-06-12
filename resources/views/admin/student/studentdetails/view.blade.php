@@ -254,9 +254,9 @@
                                     @elseif($student->discount_type_id == 2)
                                                           
                                        @if($student->centers->id == 3)                                                       
-                                        {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1710' : '1490',['class'=>'form-control']) }}
+                                        {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount_omax.'',['class'=>'form-control']) }}
                                         @else
-                                        {{ Form::number('discount',$discountfee=($student->class_id > 11)? '1410' : '1190',['class'=>'form-control']) }}
+                                        {{ Form::number('discount',$discountfee=''.$student->classes->sibling_discount_omax.'',['class'=>'form-control']) }}
                                         @endif
                                     @elseif($student->discount_type_id == 3)
                                       {{ Form::number('discount',$discountfee=0,['class'=>'form-control']) }}

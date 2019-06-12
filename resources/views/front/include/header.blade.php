@@ -1,9 +1,27 @@
-     <div style="padding:5px auto;"> <span style="background:#000; float:left;  color:#fff "> </span>
-                    <marquee style="color:#fff;); font-size:1.2em; background:rgb(103, 174, 223)" onmouseover="this.stop();" onmouseout="this.start();">
-                        {{ $notices =App\Notice::find(1)->news }}
-                                        </marquee>
-                  </div> 
-               
+<style>
+  .header-two .top-contents .icon {
+      display: inline-block;
+      float: left;
+      margin-right: 15px;
+      color: #fffae9;
+</style>
+<div class="row">
+   <div class="col-lg-2" style="background-color: #000;
+    padding: 5px;
+    padding-left: 90px;
+    font-size: 20px;">
+        <span style="padding:5px auto;color:#fff">
+         <b> Latest News</b> <i class="fa fa-space-shuttle faa-passing animated"></i> </span>  
+    </div> 
+    <div class="col-lg-10" style="padding:1px;color:#fff;); font-size:1.2em; background:rgb(103, 174, 223)"> 
+          
+                 <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                              {{ $notices =App\Notice::find(1)->news }}
+                </marquee>
+          
+                  
+    </div>     
+</div>       
   <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog"> 
             <!-- Modal content-->
@@ -38,7 +56,7 @@
     color: #fffcfc;
     </style>
   	<header class="header-two">
-  		<div class="header-top" style="background-color:#ffc000;color:#fff">
+  		<div class="header-top" style="background-color:#B40303;color:#fff">
   			<div class="container">
   				<div class="row">
             <div class="col-md-3">
@@ -118,16 +136,7 @@
                       <li><a href="{{ route('front.holiday-homework') }}">Holiday Homework</a></li>
                       
                     </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Art<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                    <li><a href="{{ route('front.art-craft') }}">Art & Craft</a></li>
-                      <li><a href="{{ route('front.dance') }}">Dance</a></li>
-                      <li><a href="{{ route('front.music') }}">Music</a></li>
-                      <li><a href="{{ route('front.mini-theater') }}">Mini Theater</a></li>
-                    </ul>
-                  </li>
+                  </li>                   
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -137,6 +146,10 @@
                       <li><a href="{{ route('front.library') }}">Library</a></li>
                       <li><a href="{{ route('front.counselling-area') }}">Counselling Area</a></li>
                       <li><a href="{{ route('front.transport') }}">Transport</a></li>
+                       <li><a href="{{ route('front.art-craft') }}">Art & Craft</a></li>
+                      <li><a href="{{ route('front.dance') }}">Dance</a></li>
+                      <li><a href="{{ route('front.music') }}">Music</a></li>
+                      <li><a href="{{ route('front.mini-theater') }}">Mini Theater</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
@@ -173,16 +186,24 @@
                      <li><a href="{{ route('front.career') }}">Career</a></li>
                       {{-- <li><a href="{{ route('front.rang-mahotsav') }}">Rang Mahotsav</a></li> --}}
                     </ul>
-                  </li>
-                 
-                  
-                  <li><a href="{{ route('front.contact') }}">Contact</a></li>
-                  <li class="dropdown button-default">
+                  </li> 
+                  <li class="dropdown">
                     <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                        <li><a href="{{ route('student.home') }}">Parent's Login</a></li>
 
                         <li><a href="{{ route('admin.home') }}">Admin Login</a></li>
+                      {{-- <li><a href="{{ route('front.rang-mahotsav') }}">Rang Mahotsav</a></li> --}}
+                    </ul>
+                  </li> 
+                  <li class="dropdown button-default">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help Desk <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       
+                            <li><a href="#">P.T.M</a></li>
+                            <li><a href="{{ route('front.contact') }}">Contact US</a></li>
+                            <li><a href="{{ route('front.enquiry') }}">Feedback</a></li>
+                            <li><a href="#">Admission Form</a></li>
                       {{-- <li><a href="{{ route('front.rang-mahotsav') }}">Rang Mahotsav</a></li> --}}
                     </ul>
                   </li>
