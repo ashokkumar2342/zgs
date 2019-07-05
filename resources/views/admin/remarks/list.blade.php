@@ -20,10 +20,10 @@
 
        <tr>
          <td>{{ $remark->created_at->format('d-m-Y') }}</td>
-         <td>{{$remark->students->name }}</td>
-         <td>{{ $remark->centers->name }}</td>
-         <td>{{ $remark->classes->name }}</td>
-         <td>{{ $remark->sections->name }}</td>
+         <td>{{$remark->students->name or '' }}</td>
+         <td>{{ $remark->centers->name or ''}}</td>
+         <td>{{ $remark->classes->name  or ''}}</td>
+         <td>{{ $remark->sections->name or '' }}</td>
          <td>{{ $remark->remarks }}</td>
          <td>
             <a href="{{ route('admin.replyRemark.show',$remark->id) }}" class="btn btn-success btn-xs" >Reply</a>
