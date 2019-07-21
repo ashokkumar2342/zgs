@@ -36,7 +36,7 @@ class HomeController extends Controller
     }
     public function circular()
     {
-        $circulars = Circular::orderBy('id','desc')->paginate(10);
+        $circulars = Circular::orderBy('id','desc')->paginate(30);
              
         return view('front.circular',compact('circulars'));
     }
