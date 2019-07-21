@@ -67,7 +67,14 @@
                  @foreach ($news as $new)
                     {{-- expr --}}
                   
-                 <p class="bg-warning" style="color:red">  <img src="https://zippy.gfycat.com/DownrightSneakyBrant.gif" style="height:15px;"> {{$new->news}}  </p>   
+                 <p class="bg-warning" style="color:red">  <img src="https://zippy.gfycat.com/DownrightSneakyBrant.gif" style="height:15px;"> {{$new->news}} 
+                
+                    @if ($new->file!=null)
+                        <a class="btn-success btn-xs"  href="{{ asset('uploads/'.$new->file) }}" target="blank"  ><i class="fa fa-download"></i></a> 
+                    @endif
+                 
+                  
+                </p>   
 
                   @endforeach 
                 

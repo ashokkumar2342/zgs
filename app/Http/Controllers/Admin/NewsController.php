@@ -26,17 +26,31 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-               $this->validate($request, [
-            'news' => 'required|max:255',
-            
+    { 
 
-        ]);
+         $this->validate($request, [
+        'news' => 'required|max:255', 
+        'file' => 'mimes:pdf,docx|max:3000|nullable',             
+             
+          ]);
+          if ($request->hasFile('file')) {
+
+              $imageFile = $request->file('file');
+              $imageName = $imageName = time().$imageFile->getClientOriginalName();
+              $imageFile->move(public_path('uploads'),$imageName);
+              $gallery = new News();
+              $gallery->file = $imageName;  
+              $gallery->news = $request->news;           
+
+              $gallery->save();
+
+              
+          }     
          
-        $news = News::create([
-            'news' => $request['news'],
+        // $news = News::create([
+        //     'news' => $request['news'],
             
-            ]);       
+        //     ]);       
         return redirect()->route('admin.news.list')->with(['message'=>'News Created Successfully ','class'=>'success']);
         // return redirect()->route('admin.front.list')->with(['message'=>'Image Uploaded Successfully ']);
 

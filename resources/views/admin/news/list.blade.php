@@ -7,17 +7,22 @@
 
 <section class="content">
     <div class="box">
-      <div class="box-body">
-        {{ Form::open(['route'=>'admin.news.post','class'=>'validate cmxform tasi-form']) }}
+      <div class="box-body" >      
+        {{ Form::open(['route'=>'admin.news.post','class'=>'validate cmxform tasi-form','files'=>true]) }}
                 <div class="form-group clearfix">
                     {{ Form::label('news','News & Events',['class'=>'col-lg-2 control-label']) }}
-                    <div class="col-lg-10">
+                    <div class="col-lg-8">
                         {{ Form::text('news','',['class'=>'form-control required']) }}
                         <p class="text-danger">{{ $errors->first('news') }}</p>
                     </div>
+                    <div class="col-lg-2">
+
+                        <input type="file" name="file" class="form-control">
+                        <p class="text-danger">{{ $errors->first('file') }}</p>
+                    </div>
                 </div>
            
-             
+                
                 <div class="form-group">
                     <button class="btn btn-primary pull-right" type="submit">Create News</button>
                 </div>
@@ -42,6 +47,12 @@
                     <td >{{ $new->news }}</td>
                   
                     <td>
+                        @if ($new->file!=null)
+                            <a class="btn-success btn-xs"  href="{{ asset('uploads/'.$new->file) }}" target="blank"  ><i class="fa fa-download"></i></a>
+                        @else
+                        <button type="button" class="btn-danger btn-xs disabled"  href="#" target="blank" >_</button>
+                        @endif
+                       
                      
                         <a href="{{ route('admin.news.edit',[$new->id]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
 
@@ -77,4 +88,9 @@
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  
 </script>
+ @if(Session::has('message'))
+<script type="text/javascript">
+    Command: toastr["{{ Session::get('class') }}"]("{{ Session::get('message') }}");
+</script>
+@endif
 @endpush
