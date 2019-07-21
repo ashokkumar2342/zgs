@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Circular;
 use App\HolidayHomework;
 use App\Http\Controllers\Controller;
 use App\News;
@@ -32,6 +33,12 @@ class HomeController extends Controller
     public function chairman()
     {
         return view('front.chairman-message');
+    }
+    public function circular()
+    {
+        $circulars = Circular::orderBy('id','desc')->paginate(10);
+             
+        return view('front.circular',compact('circulars'));
     }
     public function holiday()
     {

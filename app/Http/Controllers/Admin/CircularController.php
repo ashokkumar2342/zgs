@@ -39,18 +39,28 @@ class CircularController extends Controller
     {
         $this->validate($request,[
             'title' => 'required|max:199',
-            'body' => 'required'
+            'body' => 'required',
+            'file' => 'mimes:pdf,docx|max:3000|nullable',  
             ]);
+        if ($request->hasFile('file')) {
 
-        $circulars = new Circular();
+            $imageFile = $request->file('file');
+            $imageName = $imageName = time().$imageFile->getClientOriginalName();
+            $imageFile->move(public_path('uploads'),$imageName);
+            $gallery = new Circular();
+            $gallery->file = $imageName;  
+             $gallery->title = $request->title;
+             $gallery->body = $request->body;        
 
-        $circulars->title = $request->title;
-        $circulars->body = $request->body;
-        if ($circulars->save()) {           
+            $gallery->save();
+
+            
+        } 
+           
          
-            return redirect()->route('admin.circular.list')->with(['class'=>'success','message'=>'Circular Add  successfully ...']);
-        }
-        return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);
+         return redirect()->route('admin.circular.list')->with(['class'=>'success','message'=>'Circular Add  successfully ...']);
+        
+         
             
         
     }

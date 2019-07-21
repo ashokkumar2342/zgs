@@ -23,6 +23,7 @@ Route::group(['prefix' => 'academic'], function() {
     Route::get('holiday-homework', 'Front\HomeController@holiday')->name('front.holiday-homework');
     Route::get('holiday-homework2', 'Front\HomeController@holiday2')->name('front.holiday-homework2');
     Route::get('holiday-homework3', 'Front\HomeController@holiday3')->name('front.holiday-homework3');
+    Route::get('circular', 'Front\HomeController@circular')->name('front.circular');
     Route::get('syllabus', function(){
     	return view('front.syllabus');
     } )->name('front.syllabus');

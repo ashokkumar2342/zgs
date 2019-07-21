@@ -6,9 +6,14 @@
    <!-- Banner Start here -->
    <section class=" container text-center" style="margin-top: 10px;margin-bottom:  10px">
      <div  class="row">
+        <a href="{{ route('front.circular') }}" title="Circular">
        <div  class="col-lg-4 bg-primary"  style="background-color: blue">
+      
+          
+       
          <h4 style="color:#fff">School Circulars</h4>
        </div>
+        </a>
        <a href="https://smarthubeducation.hdfcbank.com/SmartFees/Landing.action?instId=4762" title="Online Pay" target="_blank">
        <div  class="col-lg-4 bg-info" style="background-color: green">
          <h4 style="color:#fff">Pay Online Fee</h4> 

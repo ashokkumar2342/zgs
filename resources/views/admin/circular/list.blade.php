@@ -19,6 +19,11 @@
 	   			<th>{{ $circular->body }}</th>
 
 	   			<th>
+	   				@if ($circular->file!=null)
+	   				    <a class="btn-success btn-xs"  href="{{ asset('uploads/'.$circular->file) }}" target="blank"  ><i class="fa fa-download"></i></a>
+	   				@else
+	   				<button type="button" class="btn-danger btn-xs disabled"  href="#" target="blank" >_</button>
+	   				@endif
 	   			<a class="btn btn-success btn-xs"  href="{{ route('admin.circular.edit',$circular->id) }}">Edit</a>
 
 	   			<a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this data ?')" href="{{ route('admin.circular.delete',$circular->id) }}">Delete</a></th> 
