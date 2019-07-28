@@ -137,7 +137,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblCaution" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Caution Money</span>
+                                        <span id="lblCaution" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Meal</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblCautionMoney" style="font-family:Arial;font-size:Small;">0.00</span>
@@ -394,7 +394,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblCaution2" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Caution Money</span>
+                                        <span id="lblCaution2" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Meal</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblCautionMoney2" style="font-family:Arial;font-size:Small;">0.00</span>

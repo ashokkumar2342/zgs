@@ -122,6 +122,7 @@ class StudentController extends Controller
         $studentFee->sms_charge =$request->sms_charges;
         $studentFee->tution_fee = $request->tution_fees;
         $studentFee->transport_fee= $request->transport_fee;
+        $studentFee->previous_balance= $request->previous_balance;
         if($studentFee->save()){ 
             return redirect()->back()->with(['class'=>'success','message'=>'student fee pay success ...']);
         }

@@ -5,7 +5,15 @@
 @section('body')
 @php
    $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
-@endphp
+
+   if (!empty($studentFees[1]))
+      $priviousBalance =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->orderBy('id','desc')->first()->balance_fee;
+   else{
+    $priviousBalance=0;
+   }   
+   
+  
+ @endphp
     <section class="content">
       <div class="box">       
         <div class="box-header">
@@ -306,7 +314,15 @@
                               <p class="text-danger">{{ $errors->first('other_fee') }}</p>
                           </div>
                       </div>
-                      
+                      <div class="col-lg-6">                         
+                          <div class="form-group">
+                          
+                              {{ Form::label('previous_balance','Previous Balance',['class'=>' control-label']) }} 
+                              {{ Form::text('previous_balance',$priviousBalance ,['class'=>'form-control','required','readonly']) }}
+                              
+                          </div>
+                      </div>
+                     
                       <div class="col-lg-6 ">                         
                           <div class="form-group">
                               {{ Form::label('amount_payable','Amount Payable ',['class'=>' control-label']) }}                         
@@ -409,12 +425,13 @@
        
     });
    
-    function amountPayable( other_fee=$("#other_fee").val(), discount=$("#discount").val(),installment_fees=$("#installment_fees").val()){
+    function amountPayable( other_fee=$("#other_fee").val(), discount=$("#discount").val(),installment_fees=$("#installment_fees").val(),previous_balance=$("#previous_balance").val()){
+        previous_balance = (previous_balance == '')?0:previous_balance;
         other_fee = (other_fee == '')?0:other_fee;
         discount = (discount == '')?0:discount;
         installment_fees = (installment_fees == '')?0:installment_fees;
-        $("#amount_payable").val((parseInt(other_fee)+parseInt(installment_fees))-parseInt(discount));
-        $("#received_fees").val((parseInt(other_fee)+parseInt(installment_fees))-parseInt(discount));
+        $("#amount_payable").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance))-parseInt(discount));
+        $("#received_fees").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance))-parseInt(discount));
         //return $("#discount").val()+$("#transport_fee").val()+$("#installment_fees").val()-$("#discount").val();
     }
     amountPayable();

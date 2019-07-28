@@ -91,7 +91,7 @@
                      </div>
                      <div class="col-lg-4">                         
                        <div class="form-group">
-                        {{ Form::label('caution_money','Caution Money (In Rs.)',['class'=>' control-label']) }}
+                        {{ Form::label('caution_money','Meal (In Rs.)',['class'=>' control-label']) }}
                         {{ Form::number('caution_money',@$classFee->caution_fee,['class'=>'form-control required']) }}
                         <p class="text-danger">{{ $errors->first('caution_money') }}</p>
                         </div>

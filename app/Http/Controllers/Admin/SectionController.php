@@ -70,7 +70,7 @@ class SectionController extends Controller
                      <div class="row">
                      <div class="col-lg-3">                         
                        <div class="form-group">
-                        <label for="caution_money" class=" control-label">Caution Money (In Rs.)</label>
+                        <label for="caution_money" class=" control-label">Meal (In Rs.)</label>
                         <input class="form-control required classfee"  value="'.$classFee->caution_fee.'" name="caution_money" type="number" id="caution_money">
                         <p class="text-danger"></p>
                         </div>

@@ -38,7 +38,7 @@
 
                       <div class="col-lg-3">                         
                        <div class="form-group">
-                        <label for="caution_money" class=" control-label">Caution Money (In Rs.)</label>
+                        <label for="caution_money" class=" control-label">Meal (In Rs.)</label>
                         <input class="form-control required classfee"  value="{{ $student->caution_money }}" name="caution_money" type="number" id="caution_money">
                         <p class="text-danger"></p>
                         </div>
