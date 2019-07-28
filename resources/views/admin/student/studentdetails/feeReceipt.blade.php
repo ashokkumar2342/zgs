@@ -23,6 +23,13 @@
 <body>
 <br> 
 <div>
+    @php
+       
+    $firstPaymentId =App\StudentFee::where('student_id',$studentFee->student_id)->where('session_id',$studentFee->session_id)->first()->id;
+       
+      
+      
+     @endphp
     <div id="p1" style="font-family:Arial;">    
         <center>
             <table>
@@ -110,7 +117,7 @@
                                         Amount
                                     </td>
                                 </tr>
-                               @if($studentFee->admission_form_fee !=null)
+                               @if($studentFee->id ==$firstPaymentId)
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
                                         <span id="lblRegistraionFees" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Registration Fee</span>
@@ -393,7 +400,7 @@
                                         Amount
                                     </td>
                                 </tr>
-                                @if($studentFee->admission_form_fee !=null)
+                                @if($studentFee->id ==$firstPaymentId)
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
                                         <span id="lblRegistraionFees" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Registration Fee</span>
