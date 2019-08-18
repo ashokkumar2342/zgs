@@ -92,7 +92,23 @@ class StudentController extends Controller
             "bank_name" => 'nullable|max:199',
             "cheque_date" => 'nullable|date',      
         ]);
-        
+          $studentFeesCount =StudentFee::where('student_id',$request->student_id)->where('session_id',$request->session_id)->get();
+         $monthNames='';
+        if (count($studentFeesCount)==0){
+            if ($request->student_payment_type==1) {
+               $monthNames='All';  
+            }else{
+                 $monthNames='Apr,May,Jun';
+            }
+           
+        }
+         elseif (count($studentFeesCount)==1) {
+             $monthNames='Jul,Aug,Sep';    
+         }elseif (count($studentFeesCount)==2) {
+             $monthNames='Oct,Nov,Dec';    
+         }elseif (count($studentFeesCount)==3) {
+             $monthNames='Jan,Feb,Mar';    
+         }
         $studentFee = new StudentFee();
         $studentFee->student_id = $request->student_id;
         $studentFee->session_id = $request->session_id;
@@ -123,6 +139,7 @@ class StudentController extends Controller
         $studentFee->tution_fee = $request->tution_fees;
         $studentFee->transport_fee= $request->transport_fee;
         $studentFee->previous_balance= $request->previous_balance;
+        $studentFee->month_name= $monthNames;
         if($studentFee->save()){ 
             return redirect()->back()->with(['class'=>'success','message'=>'student fee pay success ...']);
         }
@@ -216,8 +233,8 @@ class StudentController extends Controller
         $student->class_id= $request->class;
         $student->section_id= $request->section;
         $student->totalFee= $request->total_fee-$transport_fee2;
-        $student->firsttime_fee = ($request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges+$request->caution_money) ;
-        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee);
+        $student->firsttime_fee = ($request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges) ;
+        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee+$request->caution_money);
         
         $student->admission_fee =$request->admission_fees ;
         $student->admission_form_fee =$request->admission_form_fees ;
@@ -362,8 +379,8 @@ class StudentController extends Controller
         $student->class_id= $request->class;
         $student->section_id= $request->section;
         $student->totalFee= $request->total_fee-$transport_fee2;
-        $student->firsttime_fee = ($request->admission_fees+$request->registration_fees+$request->admission_form_fees+$request->annual_charges+$request->caution_money) ;
-        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee);
+        $student->firsttime_fee = ($request->admission_fees+$request->registration_fees+$request->admission_form_fees+$request->annual_charges) ;
+        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee+$request->caution_money);
         
         $student->admission_fee =$request->admission_fees ;
         $student->admission_form_fee =$request->admission_form_fees ;
@@ -425,8 +442,8 @@ class StudentController extends Controller
         $student->class_id= $request->class;
         $student->section_id= $request->section;
         $student->totalFee= $request->total_fee-$transport_fee2;
-        $student->firsttime_fee = ($request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges+$request->caution_money) ;
-        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee);
+        $student->firsttime_fee = ($request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges) ;
+        $student->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$transport_fee+$request->caution_money);
         
         $student->admission_fee =$request->admission_fees ;
         $student->admission_form_fee =$request->admission_form_fees ;
@@ -591,8 +608,8 @@ class StudentController extends Controller
             foreach ($students as  $student) {
                 $data = Student::find($student->id);
                 $data->totalFee= $request->admission_fees+$request->admission_form_fees+$request->registration_fees+$request->annual_charges+$request->caution_money+$request->activity_charges+$request->smart_class_fees+$request->tution_fees+$request->sms_charges+$student->transport_fee;
-                $data->firsttime_fee = ($request->admission_fees+$request->registration_fees+$request->admission_form_fees+$request->annual_charges+$request->caution_money) ;
-                $data->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$student->transport_fee);
+                $data->firsttime_fee = ($request->admission_fees+$request->registration_fees+$request->admission_form_fees+$request->annual_charges) ;
+                $data->installment_fee = ($request->activity_charges+$request->smart_class_fees+$request->sms_charges+$request->tution_fees+$student->transport_fee+$request->caution_money);
 
                 $data->admission_fee=$request->admission_fees;
                 $data->admission_form_fee=$request->admission_form_fees;

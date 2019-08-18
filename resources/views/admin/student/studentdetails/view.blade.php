@@ -6,7 +6,7 @@
 @php
    $studentFees =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->get();
 
-   if (!empty($studentFees[1]))
+   if (!empty($studentFees[0]))
       $priviousBalance =App\StudentFee::where('student_id',$student->id)->where('session_id',$student->session_id)->orderBy('id','desc')->first()->balance_fee;
    else{
     $priviousBalance=0;
@@ -124,7 +124,16 @@
     <!-- Trigger the modal with a button -->
 <section class="content">
    <table class="table table-striped box">
-            <tr><th>Installment Fees </th><th>Discount</th><th>Receipt No</th><th>Receipt Date</th><th>Other Fee</th><th>Received Fees</th><th>Custom</th></tr>
+            <tr>
+              <th>Installment Fees </th>
+              <th>Discount</th>
+              <th>Receipt No</th>
+              <th>Receipt Date</th>
+              <th>Other Fees</th>
+              <th>Received Fees</th>
+              <th>Balance Fees</th>
+              <th>Custom</th>
+            </tr>
             @php
               $totalFee=0;
                
@@ -141,6 +150,7 @@
               <td>{{ $studentFee->receipt_date }}</td>
               <td>{{ $studentFee->other_fee }}</td>
               <td>{{ $studentFee->received_fee }}</td>
+              <td>{{ $studentFee->balance_fee }}</td>
               <td>
                 <a class="btn btn-warning btn-xs" href="{{ route('admin.student.fee.edit',$studentFee->id) }}"><i class="fa fa-pencil"></i></a>
                 <a class="btn btn-danger btn-xs" title="Fee Delete" onclick="return confirm('Are you sure to Fee delete.')" href="{{ route('admin.student.fee.delete',$studentFee->id) }}"><i class="fa fa-trash"></i></a>
@@ -169,6 +179,7 @@
       <div class="row">
       
              {!! Form::hidden('student_id', $student->id, []) !!}
+             {!! Form::hidden('student_payment_type', $student->paymentType->times, []) !!}
              @if(count($studentFees) < 1)
              
              {!! Form::hidden('session_id', $student->session_id, []) !!}
@@ -176,12 +187,13 @@
              {!! Form::hidden('admission_form_fees', $student->admission_form_fee, []) !!}
              {!! Form::hidden('registration_fees', $student->registration_fee, []) !!}
              {!! Form::hidden('annual_charges', $student->annual_charge, []) !!}
-             {!! Form::hidden('caution_money', $student->caution_money, []) !!}
+            
              
              {!! Form::hidden('activity_charges', ($student->activity_charge/$student->paymentType->times), []) !!}
              {!! Form::hidden('smart_class_fees', ($student->smart_class_fee/$student->paymentType->times), []) !!}
              {!! Form::hidden('sms_charges', ($student->sms_charge/$student->paymentType->times), []) !!}
              {!! Form::hidden('tution_fees', ($student->tution_fee/$student->paymentType->times), []) !!}
+             {!! Form::hidden('caution_money', ($student->caution_money/$student->paymentType->times), []) !!}
              {!! Form::hidden('transport_fee', ($student->transport_fee/$student->paymentType->times), []) !!}
              
             @else
@@ -189,6 +201,7 @@
              {!! Form::hidden('activity_charges', ($student->activity_charge/$student->paymentType->times), []) !!}
              {!! Form::hidden('smart_class_fees', ($student->smart_class_fee/$student->paymentType->times), []) !!}
              {!! Form::hidden('sms_charges', ($student->sms_charge/$student->paymentType->times), []) !!}
+             {!! Form::hidden('caution_money', ($student->caution_money/$student->paymentType->times), []) !!}
              {!! Form::hidden('tution_fees', ($student->tution_fee/$student->paymentType->times), []) !!}
              {!! Form::hidden('transport_fee', ($student->transport_fee/$student->paymentType->times), []) !!}
             @endif
