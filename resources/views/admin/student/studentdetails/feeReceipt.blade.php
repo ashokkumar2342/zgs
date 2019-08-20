@@ -151,7 +151,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assian/Sci Lab</span>
+                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblAnnualCharges" style="font-family:Arial;font-size:Small;">{{$studentFee->annual_charge}}</span>
@@ -214,6 +214,14 @@
                                      </td>
                                     <td align="right" style=" font-size: small;">
                                         <span id="lblLess" style="font-family:Arial;font-size:Small;">{{$studentFee->previous_balance}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td align="Right" style="font-weight: bold; font-size: small;">
+                                    <span id="lblLessLbl" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Late Fee </span>
+                                     </td>
+                                    <td align="right" style=" font-size: small;">
+                                        <span id="lblLess" style="font-family:Arial;font-size:Small;">{{$studentFee->late_fee}}</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -446,7 +454,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assian/Sci Lab</span>
+                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblAnnualCharges" style="font-family:Arial;font-size:Small;">{{$studentFee->annual_charge}}</span>
@@ -508,6 +516,14 @@
                                      </td>
                                     <td align="right" style=" font-size: small;">
                                         <span id="lblLess" style="font-family:Arial;font-size:Small;">{{$studentFee->previous_balance}}</span>
+                                    </td>
+                                </tr>
+                                   <tr>
+                                <td align="Right" style="font-weight: bold; font-size: small;">
+                                    <span id="lblLessLbl" style="display:inline-block;font-family:Arial;font-size:Small;width:120px;text-align: left;">Late Fee </span>
+                                     </td>
+                                    <td align="right" style=" font-size: small;">
+                                        <span id="lblLess" style="font-family:Arial;font-size:Small;">{{$studentFee->late_fee}}</span>
                                     </td>
                                 </tr>
                                 <tr>

@@ -139,6 +139,7 @@ class StudentController extends Controller
         $studentFee->tution_fee = $request->tution_fees;
         $studentFee->transport_fee= $request->transport_fee;
         $studentFee->previous_balance= $request->previous_balance;
+        $studentFee->late_fee= $request->late_fee;
         $studentFee->month_name= $monthNames;
         if($studentFee->save()){ 
             return redirect()->back()->with(['class'=>'success','message'=>'student fee pay success ...']);

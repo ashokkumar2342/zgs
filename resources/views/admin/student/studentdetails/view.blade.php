@@ -335,6 +335,14 @@
                               
                           </div>
                       </div>
+                      <div class="col-lg-6">                         
+                          <div class="form-group">
+                          
+                              {{ Form::label('late_fee','Late Fee',['class'=>' control-label']) }} 
+                              {{ Form::text('late_fee',0 ,['class'=>'form-control','required']) }}
+                              
+                          </div>
+                      </div>
                      
                       <div class="col-lg-6 ">                         
                           <div class="form-group">
@@ -432,19 +440,22 @@
     $("#other_fee").keyup(function(){
        amountPayable();
     });
+    $("#late_fee").keyup(function(){
+       amountPayable();
+    });
     
     $("#discount").keyup(function(){
         amountPayable();
        
     });
    
-    function amountPayable( other_fee=$("#other_fee").val(), discount=$("#discount").val(),installment_fees=$("#installment_fees").val(),previous_balance=$("#previous_balance").val()){
+    function amountPayable( other_fee=$("#other_fee").val(), discount=$("#discount").val(),installment_fees=$("#installment_fees").val(),previous_balance=$("#previous_balance").val(), late_fee=$("#late_fee").val()){
         previous_balance = (previous_balance == '')?0:previous_balance;
         other_fee = (other_fee == '')?0:other_fee;
         discount = (discount == '')?0:discount;
         installment_fees = (installment_fees == '')?0:installment_fees;
-        $("#amount_payable").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance))-parseInt(discount));
-        $("#received_fees").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance))-parseInt(discount));
+        $("#amount_payable").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance)+parseInt(late_fee))-parseInt(discount));
+        $("#received_fees").val((parseInt(other_fee)+parseInt(installment_fees)+parseInt(previous_balance)+parseInt(late_fee))-parseInt(discount));
         //return $("#discount").val()+$("#transport_fee").val()+$("#installment_fees").val()-$("#discount").val();
     }
     amountPayable();
