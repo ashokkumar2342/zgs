@@ -38,7 +38,7 @@
                                     <td colspan="4">
                                         <div style="width: 450px;" align="center">
                                             <img src="{{asset('images/logo.png')}}" alt="" height="50px" /><br />
-                                            <span id="lblheader" style="font-family:Arial;font-size:Small;">ZAD Eduplex, HUDA Complex, Tele : +91-8397068001</br>8th km., Jind Road, N.H. 71, Tele : +91-8570006662<br/>OMAXE CIty, Delhi Road Rohtak -124001(Hr.)-+91-8295300441</br></br>Fee Receipt (Office Copy) Session : {{$studentFee->student->sessions->date}}</span>
+                                            <span id="lblheader" style="font-family:Arial;font-size:Small;">ZAD Eduplex, HUDA Complex, Tele : +91-8397068001</br>8th km., Jind Road, N.H. 71, Tele : +91-8570006662<br/>OMAXE CIty, Delhi Road Rohtak -124001(Hr.)-+91-8295300441</br>Fee Receipt (Office Copy) Session : {{$studentFee->student->sessions->date}}</span>
                                             <hr />
                                         </div>
                                     </td>
@@ -151,7 +151,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab</span>
+                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab/Computer</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblAnnualCharges" style="font-family:Arial;font-size:Small;">{{$studentFee->annual_charge}}</span>
@@ -169,7 +169,7 @@
                                
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        Smart Class/Computer
+                                        Smart Class
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblSmartClass" style="font-family:Arial;font-size:Small;">{{$studentFee->smart_class_fee}}</span>
@@ -341,7 +341,7 @@
                                     <td colspan="4">
                                         <div style="width: 450px;" align="center">
                                             <img src="{{asset('images/logo.png')}}" alt="" height="50px" /><br />
-                                            <span id="lblheader" style="font-family:Arial;font-size:Small;">ZAD Eduplex, HUDA Complex, Tele : +91-8397068001</br>8th km., Jind Road, N.H. 71, Tele : +91-8570006662<br/>OMAXE CIty, Delhi Road Rohtak -124001(Hr.)-+91-8295300441</br></br>Fee Receipt (Parents Copy) Session : {{$studentFee->student->sessions->date}}</span>
+                                            <span id="lblheader" style="font-family:Arial;font-size:Small;">ZAD Eduplex, HUDA Complex, Tele : +91-8397068001</br>8th km., Jind Road, N.H. 71, Tele : +91-8570006662<br/>OMAXE CIty, Delhi Road Rohtak -124001(Hr.)-+91-8295300441</br>Fee Receipt (Parents Copy) Session : {{$studentFee->student->sessions->date}}</span>
                                             <hr />
                                         </div>
                                     </td>
@@ -454,7 +454,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab</span>
+                                        <span id="lblDevelopmentCharges" style="display:inline-block;font-family:Arial;font-size:Small;width:220px;text-align: left;">Exam/Assign/Sci Lab/Computer</span>
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblAnnualCharges" style="font-family:Arial;font-size:Small;">{{$studentFee->annual_charge}}</span>
@@ -472,7 +472,7 @@
                              
                                 <tr>
                                     <td align="left" style="font-weight: bold; font-size: small;">
-                                        Smart Class/Computer
+                                        Smart Class
                                     </td>
                                     <td align="right" style="font-size: small;">
                                         <span id="lblSmartClass" style="font-family:Arial;font-size:Small;">{{$studentFee->smart_class_fee}}</span>
