@@ -37,7 +37,7 @@ class SendSms
         
         //  $msg=urlencode($event->message);
  
-        //  $url = "http://bulksms.innovusine.com/sendurlcomma.aspx?user=20084062&pwd=zad@184&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg";
+        //  $url = "http://180.179.218.150/sendurlcomma.aspx?user=20084062&pwd=zad@184&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg";
         // $ch = curl_init($url);
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         // $curl_scraped_page = curl_exec($ch);
@@ -51,9 +51,9 @@ class SendSms
         $msg=urlencode($event->message);
  
  
-        $url = "http://bulksms.innovusine.com/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13"; 
+        $url = "http://180.179.218.150/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13"; 
  
-        $url = "http://bulksms.innovusine.com/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13";
+        $url = "http://180.179.218.150/sendurlcomma.aspx?user=20089373&pwd=123456&senderid=ZADRTK&mobileno=$event->mobile&msgtext=$msg&smstype=13";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $curl_scraped_page = curl_exec($ch);
